@@ -56,6 +56,13 @@ Optimization.*"
 maths with KaTeX, optional pre-rendering, written in Julia.*"
 
 
+## Useful links
 
 
+[A Comprehensive Tutorial to Learn Data Science with Julia from Scratch](https://www.analyticsvidhya.com/blog/2017/10/comprehensive-tutorial-learn-data-science-julia-from-scratch/)
 
+[10 Reasons Why You Should Learn Julia](https://blog.goodaudience.com/10-reasons-why-you-should-learn-julia-d786ac29c6ca)
+
+[Noteworthy Differences from other Languages](https://docs.julialang.org/en/v1/manual/noteworthy-differences/)
+
+[Julia Cheat Sheet](https://juliadocs.github.io/Julia-Cheat-Sheet/)
