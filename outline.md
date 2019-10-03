@@ -7,11 +7,14 @@ We sketch some ideas for the seminar on October 25, 3pm-5pm.
 - History, motivation
 - Community
 - Versions, current status
+- Contrast with other languages
 
 ## Installation
 
 - Mac, Linux, Windows
+- IDE: *Jupyter*, JuliaPRO/Atom, VSCode, SimpleText
 - Fallback cloud version
+- Internet connection or wireless fileserver
 
 ## Demo
 
@@ -20,6 +23,7 @@ We sketch some ideas for the seminar on October 25, 3pm-5pm.
 - Type system, multiple dispatch
 - Unicode support
 - Interface to other languages
+- Data import/export
 - Visualization frameworks
 - Data management and wrangling
 - Speed

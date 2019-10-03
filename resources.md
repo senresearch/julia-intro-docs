@@ -18,6 +18,7 @@ Ekre)](https://docs.google.com/presentation/d/1k0fIakKdOnqvt8gHboqgI35Qf9hZOCkN0
   Sengupta)](https://github.com/mbauman/ParallelWorkshop2019 "Parallel
   Computing")
 
+
 ### Presentation and more
 
 - [Debugging Code with JuliaInterpreter](https://github.com/JuliaDebug/Debugger.jl "Package on Github") presented by [Kristoffer Carlsson, Tim Holy and Sebastian Pfitzner](https://www.youtube.com/watch?v=SU0SmQnnGys "Youtube Presentation")   
@@ -44,6 +45,8 @@ Optimization.*"
 
 ### Extra
 
+
+- [Annual Julia User & Developer Survey 2019](https://julialang.org/blog/2019/08/2019-julia-survey) presented by Viral Shah.
 - [Announcing composable multi-threaded parallelism in
   Julia](https://julialang.org/blog/2019/07/multithreading)
 - [Remark.jl](https://github.com/piever/Remark.jl "Package on Github") developped by Pietro Vertechi   
@@ -53,6 +56,13 @@ Optimization.*"
 maths with KaTeX, optional pre-rendering, written in Julia.*"
 
 
+## Useful links
 
 
+[A Comprehensive Tutorial to Learn Data Science with Julia from Scratch](https://www.analyticsvidhya.com/blog/2017/10/comprehensive-tutorial-learn-data-science-julia-from-scratch/)
 
+[10 Reasons Why You Should Learn Julia](https://blog.goodaudience.com/10-reasons-why-you-should-learn-julia-d786ac29c6ca)
+
+[Noteworthy Differences from other Languages](https://docs.julialang.org/en/v1/manual/noteworthy-differences/)
+
+[Julia Cheat Sheet](https://juliadocs.github.io/Julia-Cheat-Sheet/)
