@@ -1,27 +1,28 @@
-Meet Julia
+# Meet Julia, a new programming language for data science
+
 Friday October 25, 2019 from 3:00pm-5:00pm
 
 CHIPS Room 208
+[Add street address and directions?]
 
-Have you met Julia, the MIT-created programming language?
+Are you a budding data scientist curious about new programming
+language?  Do you wish you could speed up your R or Python program?
+Have you heard of Julia but didn't know how to get started?
 
-The Julia Computing company describes her as an open-source
-programming language that "combines the functionality of quantitative
-environments such as R and Python with the speed of production
-programming languages like Java and C++ to solve big data and
-analytics problems."
+The Biostatistics Division of the Department of Preventive Medicine at
+UTHSC will be hosting a 2-hour introduction/tutorial session on the
+Julia programming language.
 
-The Biostatistics Division of the Preventive Medicine Department will
-be hosting a 2-hour introduction/tutorial session on the Julia
-programming language.
+Julia is a new interactive open-source programming language that
+combines the functionality of quantitative environments such as R and
+Python with the speed of production programming languages like Java
+and C/C++ to solve big data and analytics problems.
 
-The objective of the session is to familiarize yourself with this
-relatively new programming language: After installing Julia on your
-laptop (all OS are welcome!) and providing a quick introduction of
-what Julia can do, examples of the Julia environment and code will be
-shown.
+The tutorial will introduce Julia to attendees. After installing Julia
+on your laptop (all operating systems are welcome!) we will give
+live demos of what Julia can do and what it is good for.
 
-Julia is an interactive language that works with Python and R, so if
-you've never heard about her, please join us, and don’t forget to
-bring your laptop! Light snacks will be served.
+Users of all ability levels are welcome.  Don’t forget to bring your
+laptop! Refreshments will be served.
 
+To register: http://juliaintro2019.questionpro.com
