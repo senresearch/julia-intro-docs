@@ -2,8 +2,9 @@
 
 Friday October 25, 2019 from 3:00pm-5:00pm
 
-CHIPS Room 208
-[Add street address and directions?]
+CHIPS Room 208   
+Center for Healthcare Improvement and Patient Simulation     
+26 S Dunlap St, Memphis, TN 38163    
 
 Are you a budding data scientist curious about new programming
 language?  Do you wish you could speed up your R or Python program?
@@ -22,7 +23,7 @@ The tutorial will introduce Julia to attendees. After installing Julia
 on your laptop (all operating systems are welcome!) we will give
 live demos of what Julia can do and what it is good for.
 
-Users of all ability levels are welcome.  Donâ€™t forget to bring your
+Users of all ability levels are welcome.  Don’t forget to bring your
 laptop! Refreshments will be served.
 
 To register: http://juliaintro2019.questionpro.com
