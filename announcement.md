@@ -23,7 +23,7 @@ The tutorial will introduce Julia to attendees. After installing Julia
 on your laptop (all operating systems are welcome!) we will give
 live demos of what Julia can do and what it is good for.
 
-Users of all ability levels are welcome.  Don’t forget to bring your
+Users of all ability levels are welcome.  Don't forget to bring your
 laptop! Refreshments will be served.
 
 To register: http://juliaintro2019.questionpro.com
