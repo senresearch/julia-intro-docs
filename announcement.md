@@ -3,7 +3,8 @@
 Friday October 25, 2019 from 3:00pm-5:00pm
 
 CHIPS Room 208   
-Center for Healthcare Improvement and Patient Simulation     
+Center for Healthcare Improvement and Patient Simulation Building
+University of Tennessee Health Science Center
 26 S Dunlap St, Memphis, TN 38163    
 
 Are you a budding data scientist curious about new programming
