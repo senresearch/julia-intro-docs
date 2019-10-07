@@ -8,7 +8,7 @@ University of Tennessee Health Science Center
 26 S Dunlap St, Memphis, TN 38163    
 
 Are you a budding data scientist curious about new programming
-language?  Do you wish you could speed up your R or Python program?
+languages?  Do you wish you could speed up your R or Python program?
 Have you heard of Julia but didn't know how to get started?
 
 The Biostatistics Division of the Department of Preventive Medicine at
