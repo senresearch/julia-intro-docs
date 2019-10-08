@@ -8,8 +8,8 @@ University of Tennessee Health Science Center
 26 S Dunlap St, Memphis, TN 38163    
 
 Are you a budding data scientist curious about new programming
-languages?  Do you wish you could speed up your R or Python program?
-Have you heard of Julia but didn't know how to get started?
+languages?  Do you wish you could speed up your R or Python programs?
+Have you heard of Julia but don't know how to get started?
 
 The Biostatistics Division of the Department of Preventive Medicine at
 UTHSC will be hosting a 2-hour introduction/tutorial session on the
@@ -27,4 +27,4 @@ live demos of what Julia can do and what it is good for.
 Users of all ability levels are welcome.  Don't forget to bring your
 laptop! Refreshments will be served.
 
-To register: http://juliaintro2019.questionpro.com
+Registration by October, 22 2019 recommended: http://juliaintro2019.questionpro.com
