@@ -12,7 +12,7 @@ languages?  Do you wish you could speed up your R or Python programs
 without coding in C/C++?  Have you heard of Julia but don't know how
 to get started?
 
-The Biostatistics Division of the Department of Preventive Medicine at
+The Biostatistics Division of the Department of Preventive Medicine and the TN-CTSI at
 UTHSC will be hosting a 2-hour introduction/tutorial session on the
 Julia programming language.
 
