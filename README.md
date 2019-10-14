@@ -14,12 +14,14 @@ Idea: Two-hour workshop with the following parts
 	- What is julia 
 	- why julia 
 - Key features Overview: Greg or Xiaoqi 25 min 
+	- Package	
 	- Clean and elegant syntax (Repl and TOY EXAMPLE)
+	- Call (RCall, CCall, PyCall)
 	- Speed (Figure from benchmarking)
 	- Why is julia fast(LLVM)
 	- Parallelization(+GPU)
-	- Call (RCall, CCall, PyCall)
-	- Package		
+
+	
 
 Installation (JuliaPro + Jupyter NB)-start 5 min (Tutorial - public on bitbucket)
 
