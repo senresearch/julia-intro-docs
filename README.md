@@ -15,7 +15,7 @@ Idea: Two-hour workshop with the following parts
 	- why julia 
 - Key features Overview: Greg or Xiaoqi 25 min 
 	- Clean and elegant syntax (Repl and TOY EXAMPLE)
-	- Speed (Figure fomr benchmarking)
+	- Speed (Figure from benchmarking)
 	- Why is julia fast(LLVM)
 	- Parallelization(+GPU)
 	- Call (RCall, CCall, PyCall)
