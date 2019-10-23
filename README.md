@@ -1,17 +1,17 @@
-# Introduction to Julia
+# Meet Julia, a new programming language for data science
 
-# Julia workshop
-
-2019-10-25  
-Simulation building, UTHSC
+- Date: 2019-10-25  
+- Location: CHIPS Room 208   
+  Center for Healthcare Improvement and Patient Simulation Building  
+  University of Tennessee Health Science Center  
+  26 S Dunlap St, Memphis, TN 38163   
 
 [Workshop materials](bitbucket.org/blah)
 
-![Julia set](notebooks/juliaset.png))
 
-Signup sheet, introductions, WiFi
 
-- 2:30 Room opens, setup, social
+- 2:30 Room opens, setup, social  
+  Sign attendance, introduce yourself, connect to WiFi
 - 3:05 Introductory remarks (Sen)  
   Why we are interested, what's in it for you, overview
 - 3:10 Key features (Farage)
@@ -30,3 +30,6 @@ Feedback survey
 - Food
 - Organization
 - Interest in future workshop# Lecture outline
+
+![Julia set](notebooks/juliaset.png)
+
