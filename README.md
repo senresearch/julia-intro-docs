@@ -10,25 +10,25 @@
   
 ## Workshop materials
 
-- [WiFi instructions]()
 - [Julia and Jupyter lab installation instructions](bitbucket.org/sengroup/julia-intro-docs/)
-- [Notebooks](notebooks/notebooks.md) (forthcoming)
+Although we will present how to install Julia and Jupyter, we still recommend you to install it before hand by following the instruction tutorial. Please, if you encounter any problems during installation, post issues on bitbucket. 
+
 
 ## Schedule
 
-- 2:30 Room opens, setup, social  
+- 2:30pm Room opens, setup, social  
   Sign attendance, introduce yourself, connect to WiFi
-- 3:05 Introductory remarks (Sen)  
+- 3:05pm Introductory remarks (Sen)  
   Why we are interested, what's in it for you, overview
-- 3:10 Key features (Farage)
-- 3:30 Why is Julia fast? (Trotter)
-- 3:45 Installation, break, and pizza (Farage)
-- 4:00 Mundane data analysis tasks (Sen)
-- 4:15 Scientific computing (Sen)
-- 4:30 Parallel, distributed, and GPU computing (Trotter)
-- 4:40 Calling other languages (Farage)
-- 4:55 Closing remarks, thanks, survey (Sen)
-- 5:00 Workshop end
+- 3:10pm Key features (Farage)
+- 3:30pm Why is Julia fast and flexible? (Trotter)
+- 3:45pm Installation, break, and pizza (Farage)
+- 4:00pm Mundane data analysis tasks (Sen)
+- 4:15pm Scientific computing (Sen)
+- 4:30pm Parallel, distributed, and GPU computing (Trotter)
+- 4:40pm Calling other languages (Farage)
+- 4:55pm Closing remarks, thanks, survey (Sen)
+- 5:00pm Workshop end
 
 ## Post-meeting social
 
