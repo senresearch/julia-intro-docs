@@ -1,41 +1,32 @@
 # Introduction to Julia
 
-Draft repository for resources and materials to develop a workshop/lecture on Julia.
+# Julia workshop
 
-Idea: Two-hour workshop with the following parts
+2019-10-25  
+Simulation building, UTHSC
 
-- Overview
-- Installation
-- Basic usage
-- Advanced features
+[Workshop materials](bitbucket.org/blah)
 
-- Introduction: 10-15 min Saunak
-	- Outline of the two hour seminar
-	- What is julia 
-	- why julia 
-- Key features Overview: Greg or Xiaoqi 25 min 
-	- Package	
-	- Clean and elegant syntax (Repl and TOY EXAMPLE)
-	- Call (RCall, CCall, PyCall)
-	- Speed (Figure from benchmarking)
-	- Why is julia fast(LLVM)
-	- Parallelization(+GPU)
+![Julia set](notebooks/juliaset.png))
 
-	
+Signup sheet, introductions, WiFi
 
-Installation (JuliaPro + Jupyter NB)-start 5 min (Tutorial - public on bitbucket)
+- 2:30 Room opens, setup, social
+- 3:05 Introductory remarks (Sen)  
+  Why we are interested, what's in it for you, overview
+- 3:10 Key features (Farage)
+- 3:30 Why is Julia fast? (Trotter)
+- 3:45 Installation, break, and pizza (Farage)
+- 4:00 Mundane data analysis tasks (Sen)
+- 4:15 Scientific computing (Sen)
+- 4:30 Parallel, distributed, and GPU computing (Trotter)
+- 4:40 Calling other languages (Farage)
+- 4:55 Closing remarks, thanks, survey (Sen)
+- 5:00 Workshop end
 
----- -> 45 min  
-Break (downloading) 10 min 
+Social at High Cotton Brewery
 
-Installation-end 10 min 
-
-- Example I: 	Linear Regression 15-20 min (Load dataset, syntax, Package, visualize) (Saunak)
-- Example II: 	Benchmarking 15 min (Call, Macro, function, loop, report) (Greg) 
-- Example III:  	Parallelization 15-20 min (@distributed, @threads, GPU, macro, function, shared arrays) (Xiaoqi)
- 
-Conclusion 5 min Saunak  
-Question
-
-
-Social(HighCotton Brewry)
+Feedback survey
+- Food
+- Organization
+- Interest in future workshop# Lecture outline
