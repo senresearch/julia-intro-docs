@@ -82,3 +82,5 @@ scatter(residuals(out0),predict(out0),lab="")
 # ## GLM
 
 out1 = glm(@formula(it11~log(it09)),agren,Normal(),LogLink())
+
+(out1.model)
