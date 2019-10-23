@@ -1,0 +1,95 @@
+    /*This file contains any manual css for this page that needs to override the global styles.
+This is only required when different pages style the same element differently. This is just
+a hack to deal with our current css styles and no new styling should be added in this file.*/
+
+
+/* Added  Make the notebook cells take almost all available width */
+
+/* .container {
+    width: 99% !important;
+}*/   
+
+/* Added Prevent the edit cell highlight box from getting clipped;
+ * important so that it also works when cell is in edit mode*/
+
+/* div.cell.selected {
+    border-left-width: 1px !important;
+}*/
+
+
+/**************Syntax**************/
+/* Container holding the image and the text for Syntax slide*/
+.container-syntax {
+  position: relative;
+  width : 90%;
+  text-align: left
+  color: white;
+  
+}
+
+/* Link 1 text*/
+.link-1 {
+  position: absolute;
+  top: 34%;
+  right: 7%;
+  font-size: 74%;  
+}
+
+/* Link 2 text */
+.link-2 {
+  position: absolute;
+  top: 49%;
+  right: 7%;
+  font-size: 74%;  
+}
+
+/* Link 3 text */
+.link-3 {
+  position: absolute;
+  bottom: 33%;
+  right: 7%;
+  font-size: 74%;  
+}
+
+/* Link 4 text */
+.link-4 {
+  position: absolute;
+  bottom: 17%;
+  right: 7%;
+  font-size: 74%;  
+}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/**************Packages**************/
+/* Container holding the image and the text for Packages slide*/
+.container-packages {
+  position: relative;
+  width : 90%;
+  text-align: left
+  color: white;
+  
+}
+
+/* Link 5 text*/
+.link-5 {
+  position: absolute;
+  top: 52%;
+  right: 23%;
+  font-size: 75%;
+}
+
+/* Link 6 text */
+.link-6 {
+  position: absolute;
+  bottom: 17%;
+  right: 32%;
+  font-size: 75%;
+}
+

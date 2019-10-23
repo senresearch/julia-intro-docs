@@ -84,3 +84,11 @@ scatter(residuals(out0),predict(out0),lab="")
 out1 = glm(@formula(it11~log(it09)),agren,Normal(),LogLink())
 
 (out1.model)
+
+scatter(residuals(LinPred(out1),predict(out1),lab="")
+
+GLM.LinPredModel(out1)
+
+out1.model.
+
+

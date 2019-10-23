@@ -104,15 +104,16 @@ vcov(out)
 # ## Example: Gradient descent
 #
 # Now we examine writing a simple minimizer using gradient descent for a convex function that is a squared error loss with a L$_1$ penalty.  We import a package to perform symbolic differentiation.
+#
+# We consider minimizing the with respect to $x$, the function $$f(x) = (x-2)^2 + 2\|x\|.$$
 
 using Calculus, Plots
 f(x) = (x-2.0)^2 + 2.0*abs(x)
-plot(f,-3,6,lab="")
+plot(f,-1,4,lab="")
 
 # We calculate the derivative and assign the the function a name.
 
-g = derivative(f)
-plot(g,-3,6,lab="")
+plot(derivative(f),-1,4,lab="")
 
 # We write the gradient descent solver that takes as input the function, its gradient, an initial value, a stepsize, and a tolerance value to determine convergence.  The block of text within triple quotes before a function definition is interpreted as Markdown for documenting the function.
 #
@@ -142,7 +143,7 @@ end
 
 # Now we are ready to apply this function to the LASSO like function.
 
-gradientDescent( f , g, 1.0, 0.5, 1e-5)
+gradientDescent( f , derivative(f), 1.0, 0.5, 1e-5)
 
 f(0)
 
