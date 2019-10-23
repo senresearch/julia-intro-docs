@@ -12,7 +12,7 @@
 
 - [WiFi instructions]()
 - [Julia and Jupyter lab installation instructions](bitbucket.org/sengroup/julia-intro-docs/)
-- [Notebooks]() (forthcoming)
+- [Notebooks](notebooks/notebooks.md) (forthcoming)
 
 ## Schedule
 
