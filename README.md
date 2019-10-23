@@ -1,4 +1,4 @@
-# Meet Julia, a new programming language for data science
+G# Meet Julia, a new programming language for data science
 
 - Date: 2019-10-25  
 - Location: CHIPS Room 208   
@@ -24,12 +24,12 @@
 - 4:55 Closing remarks, thanks, survey (Sen)
 - 5:00 Workshop end
 
-Social at High Cotton Brewery
+Social at [High Cotton Brewery](https://highcottonbrewing.com) | [Directions](https://www.google.com/maps/place/598+Monroe+Ave,+Memphis,+TN+38103/@35.1413529,-90.0431918,17z)
 
 Feedback survey
 - Food
 - Organization
-- Interest in future workshop# Lecture outline
+- Interest in future workshop
 
 ![Julia set](notebooks/juliaset.png)
 
