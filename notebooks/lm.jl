@@ -63,22 +63,28 @@ using Random
 # initialize random number generator
 rng = MersenneTwister(1234321);
 # set number of bootstrap sample
-nboot = 10_000
+nboot = 100_000
 # sample indices
 idx = rand(rng,1:400,400,nboot);
 # check size of index matrix
 size(idx)
 
+# +
 # allocate memory for bootstrap results
-estBoot = zeros(nboot,3)
+# estBoot = zeros(nboot,3)
+# # loop over number of bootstrap samples; time
+# @time for i=1:nboot
+#     #estBoot[i,:] = coef(lm(@formula(it11~it09+flc),agren[idx[:,i],:]))
+    
+# end
+
+# idx = rand(rng,400,400,nboot);
+# allocate memory for bootstrap results
+estBoot = zeros(nboot)
 # loop over number of bootstrap samples; time
 @time for i=1:nboot
-    estBoot[i,:] = coef(lm(@formula(it11~it09+flc),agren[idx[:,i],:]))
+    estBoot[i] = median(agren[idx[:,i],3])
 end
-
-histogram(estBoot[:,2],lab="")
-
-# # Distributed Computing 
 
 # + {"jupyter": {"outputs_hidden": true}}
 
@@ -94,7 +100,7 @@ end
 # load packages we are going to use on each process
 @everywhere using Statistics, DataFrames, CSV, GLM, SharedArrays
 # create array shared by all processes
-estBootPar = SharedArray(zeros(nboot,3));
+estBootPar = SharedArray(zeros(nboot));
 # send random index matrix to all processes
 @everywhere idx = $idx
 # send agren dataset to all processes
@@ -105,7 +111,7 @@ nprocs()
 
 # bootstrap using distributed computing
 @time @sync @distributed for i=1:nboot
-    estBootPar[i,:] = coef(lm(@formula(it11~it09+flc),agren[idx[:,i],:]))
+    estBootPar[i] = median(agren[idx[:,i],3])
 end
 
 histogram(estBootPar[:,2],lab="")
@@ -128,13 +134,13 @@ histogram(estBootPar[:,2],lab="")
 # check number of threads
 Threads.nthreads()
 # initialize array with bootstrapped estimates
-estBootThr = zeros(nboot,3);
+estBootThr = zeros(nboot);
 # -
 
 # The code to perform multithreading is almost identical to that for distributed processing, except for the macro that we invoke before the loop.
 
 @time Threads.@threads for i=1:nboot
-    estBootThr[i,:] = coef(lm(@formula(it11~it09+flc),agren[idx[:,i],:]))
+    estBootThr[i] = median(agren[idx[:,i],3])
 end
 
 # # GPU Computing
