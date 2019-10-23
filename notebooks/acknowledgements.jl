@@ -15,5 +15,6 @@
 
 # # Acknowledgements
 #
-# - Michael
+# - TN-CTSI, Division of Biostatistics
+# - Mykel J. Kochenderfer (Optimization book in Julia)
 # - Funding: GeneNetwork R01 (Sen/Williams, MPI); NIDA P30 (Saba/Williams, MPI)
