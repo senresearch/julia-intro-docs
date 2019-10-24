@@ -42,4 +42,4 @@ w = abs.(logit.(level.(z,c2,f)));
 # colorschemes https://makie.juliaplots.org/stable/colors.html
 heatmap(x,y,w',size=(500,500),xaxis=false,yaxis=false,legend=false,color=:blues)
 
-savefig("juliaset.png")
+savefig("../images/juliaset.png")

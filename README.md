@@ -17,7 +17,9 @@ installation, please post an
 [issue](https://bitbucket.org/sengroup/julia-intro-docs/issues) and we
 will do our best to respond.
 
-[Julia and Jupyter lab installation instructions](notebooks/installation.md)
+
+
+[Julia and Jupyter lab installation instructions](https://nbviewer.jupyter.org/urls/bitbucket.org/sengroup/julia-intro-docs/notebooks/installation.ipynb)
 
 
 ## Schedule
@@ -47,5 +49,5 @@ At [High Cotton Brewery](https://highcottonbrewing.com) |
 - Organization
 - Interest in future workshop
 
-![Julia set](notebooks/juliaset.png)
+![Julia set](notebooks/images/juliaset.png)
 
