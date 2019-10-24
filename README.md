@@ -17,7 +17,7 @@ installation, please post an
 [issue](https://bitbucket.org/sengroup/julia-intro-docs/issues) and we
 will do our best to respond.
 
-[Julia and Jupyter lab installation instructions](bitbucket.org/sengroup/julia-intro-docs/notebooks/installation.md)
+[Julia and Jupyter lab installation instructions](notebooks/installation.md)
 
 
 ## Schedule
