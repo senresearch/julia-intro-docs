@@ -18,47 +18,67 @@
 
 # + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
 # ![](xiaoqi-images/xiaoqi-why-julia-fast/Slide2.png)
-# -
 
+# + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
 # ![](xiaoqi-images/xiaoqi-why-julia-fast/Slide3.png)
 
+# + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
 # ![](xiaoqi-images/xiaoqi-why-julia-fast/Slide4.png)
+# -
 
+#JIT slide
+
+
+# + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
 # # Multiple Dispatch + Type Inference
 #
+# - Namespace level (eg: select)
+# - Different strutures
+# - Different input type
+# - Different assembly
 
+# + {"slideshow": {"slide_type": "subslide"}}
 my_square(x) = x^2
 @code_typed my_square(1)
+# -
 
 @code_typed my_square(1.0)
 
 # Of course, if you know the type of your input, it is always best practice to specify it. 
-
 my_int_square(x::Int64) = x^2
 @code_typed my_int_square(1)
 
+# + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
 # # Cache and reuse compiled code.  
 # This is an easy concept. 
 # The code is only compiled once and then cached, so that you don't pay the compilation time again at the next call. 
+# -
 
 @time 2^30
 
 @time 2^30
 
+# + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
 # ![](xiaoqi-images/xiaoqi-why-julia-fast/Slide6.png)
 
+# + {"slideshow": {"slide_type": "slide"}}
 @macroexpand 1+2
+# -
 
 @code_lowered 1+2
 
 @code_typed 1+2
 
+# + {"slideshow": {"slide_type": "subslide"}}
 @code_llvm 1+2
+# -
 
 # If you really want to see assembly code, do this:
 @code_native 1+2
 
+# + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
 # ![](xiaoqi-images/xiaoqi-why-julia-fast/Slide7.png)
+# -
 
 # So, in order to find out why is Julia fast, we need to be asking a question: what makes a language slow?
 # let me give you a real life example: which one can you drive faster on, high way or local roads? 
