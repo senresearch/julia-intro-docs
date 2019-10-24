@@ -8,10 +8,16 @@
   26 S Dunlap St, Memphis, TN 38163   
   [Directions](https://duckduckgo.com/?q=26+S+Dunlap+St%2C+Memphis%2C+TN+38163&iaxm=maps)
   
-## Workshop materials
+## Installation instructions
 
-- [Julia and Jupyter lab installation instructions](bitbucket.org/sengroup/julia-intro-docs/)
-Although we will present how to install Julia and Jupyter, we still recommend you to install it before hand by following the instruction tutorial. Please, if you encounter any problems during installation, post issues on bitbucket. 
+We will use the Jupyter IDE with Julia for the seminar.  If possible,
+we suggest that you install Julia and Jupyter in advance following the
+instructions below.  If you encounter any problems during
+installation, please post an
+[issue](https://bitbucket.org/sengroup/julia-intro-docs/issues) and we
+will do our best to respond.
+
+[Julia and Jupyter lab installation instructions](bitbucket.org/sengroup/julia-intro-docs/notebooks/installation.md)
 
 
 ## Schedule
