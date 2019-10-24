@@ -17,7 +17,7 @@ using ProgressMeter
 # Create a list of packages to install
 pkgList = ["CSV", "Plots", "DataFrames", "GLM",
            "PlotlyJS", "BenchmarkTools", "Calculus",
-            "PyCall", "RCall", "Conda"];
+            "PyCall", "RCall", "Conda", "Distributions", "BenchmarkTools"];
 
 n = length(pkgList)
 

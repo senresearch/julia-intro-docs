@@ -54,6 +54,8 @@ out1 = glm(@formula(it11~it09),agren,Normal(),LogLink())
 # - Hands off approach: use existing library such as CuArrays or CLArrays 
 # - Hands on approach: write custom GPU kernel using CUDAnative and CUDAdrv
 
+# ![](xiaoqi-images/xiaoqi-why-julia-fast/Slide8.png)
+
 # ## Example: Bootstrapping
 #
 # Topics: Random numbers, linear regression, indexing, distributed computing, multithreading, julia documentation
@@ -102,9 +104,9 @@ end
 # create array shared by all processes
 estBootPar = SharedArray(zeros(nboot));
 # send random index matrix to all processes
-@everywhere idx = $idx
+@everywhere idx
 # send agren dataset to all processes
-@everywhere agren = $agren
+@everywhere agren
 # -
 
 nprocs()
@@ -114,7 +116,7 @@ nprocs()
     estBootPar[i] = median(agren[idx[:,i],3])
 end
 
-histogram(estBootPar,lab="")
+histogram(estBootPar[:,2],lab="")
 
 # ### Multi-threading
 
@@ -140,7 +142,7 @@ estBootThr = zeros(nboot);
 # The code to perform multithreading is almost identical to that for distributed processing, except for the macro that we invoke before the loop.
 
 @time Threads.@threads for i=1:nboot
-    estBootThr[i] = median(agren[idx[:,i],3])
+    estBootThr[i,:] = median(agren[idx[:,i],3])
 end
 
 # # GPU Computing
