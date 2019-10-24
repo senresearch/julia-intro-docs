@@ -49,5 +49,5 @@ At [High Cotton Brewery](https://highcottonbrewing.com) |
 - Organization
 - Interest in future workshop
 
-![Julia set](notebooks/juliaset.png)
+![Julia set](notebooks/images/juliaset.png)
 
