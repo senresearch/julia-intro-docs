@@ -114,7 +114,7 @@ nprocs()
     estBootPar[i] = median(agren[idx[:,i],3])
 end
 
-histogram(estBootPar[:,2],lab="")
+histogram(estBootPar,lab="")
 
 # ### Multi-threading
 
