@@ -13,8 +13,8 @@ As an alternative environment for Julia, we advise you to install JuliaPro, from
 * Follow the platform-specific instructions to install Julia on your OS from here: https://julialang.org/downloads/platform.html
 * If you have done everything correctly, you could launch Julia prompt from:
     * Win OS: Right click the Julia shortcut, run as admin:   
+    ![Mac OS](images/windowsJulia.png)
     
-    </br><center> <img src=images/windowsJulia.png  width="500"/> </center>
     * Mac OS: Go to launchpad, find Julia and run it:   
     
     </br><center> <img src=images/macJulia.png  width="500"/> </center>
