@@ -6,11 +6,11 @@
 #       extension: .jl
 #       format_name: light
 #       format_version: '1.4'
-#       jupytext_version: 1.2.1
+#       jupytext_version: 1.2.4
 #   kernelspec:
-#     display_name: Julia (4 threads) 1.2.0
+#     display_name: Julia 1.2.0
 #     language: julia
-#     name: julia-(4-threads)-1.2
+#     name: julia-1.2
 # ---
 
 # + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
@@ -54,6 +54,7 @@ mean.(skipmissing.(eachcol(agren)))
 # -
 
 histogram(agren.it09,lab="")
+# display.(histogram.(eachcol(agren)))
 
 # + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
 # ## Visualization: scatterplot
@@ -81,4 +82,13 @@ scatter(residuals(out0),predict(out0),lab="")
 
 # ## GLM
 
-out1 = glm(@formula(it11~log(it09)),agren,Normal(),LogLink())
+out1 = glm(@formula( it11 ~ log(it09) ),agren,Normal(),LogLink())
+
+using Random
+using Distributions
+
+rnd = MersenneTwister(100)
+rand(Uniform(),4,4)
+cdf(Uniform(),0.2)
+
+
