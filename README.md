@@ -19,7 +19,7 @@ will do our best to respond.
 
 
 
-[Julia and Jupyter lab installation instructions](https://nbviewer.jupyter.org/urls/bitbucket.org/sengroup/julia-intro-docs/notebooks/installation.ipynb)
+[Julia and Jupyter lab installation instructions](https://nbviewer.jupyter.org/urls/bitbucket.org/sengroup/julia-intro-docs/raw/5b1ee12b9a83f4f7e30c05c488dffae63c15bf76/notebooks/installation.ipynb)
 
 
 ## Schedule
