@@ -40,7 +40,7 @@ will do our best to respond.
 - 3:10pm Key features (Farage)  
   [Slides](notebooks/KeyfeaturesOverview.pdf)
 - 3:30pm Why is Julia fast and flexible? (Trotter)  
-  [Notebook](notebook)
+  [Notebook](notebooks/Why_is_Julia_Fast.ipynb)
 - 3:45pm Installation, break, and pizza (Farage)  
   [Notebook](https://nbviewer.jupyter.org/urls/bitbucket.org/sengroup/julia-intro-docs/raw/5b1ee12b9a83f4f7e30c05c488dffae63c15bf76/notebooks/installation.ipynb)
 - 4:00pm Mundane data analysis tasks (Sen)  
@@ -48,9 +48,9 @@ will do our best to respond.
 - 4:15pm Scientific computing (Sen)  
   [Notebook](notebooks/optim.ipynb)
 - 4:30pm Parallel, distributed, and GPU computing (Trotter)  
-  [Notebook](notebook)
+  [Notebook](notebooks/parallel.ipynb)
 - 4:40pm Calling other languages (Farage)  
-  [Notebook](notebook)
+  [Notebook](notebooks/callLanguageFunctions.ipynb)
 - 4:55pm Closing remarks, thanks, survey (Sen)
 - 5:00pm Workshop end
 
