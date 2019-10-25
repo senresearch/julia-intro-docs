@@ -87,10 +87,10 @@ end
 estBootPar = SharedArray(zeros(nboot));
 
 # send random index matrix to all processes
-@everywhere idx
+@everywhere idx = $idx
 
 # send agren dataset to all processes
-@everywhere agren
+@everywhere agren = $agren
 # -
 
 nprocs()
