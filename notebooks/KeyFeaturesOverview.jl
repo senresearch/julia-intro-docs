@@ -7,7 +7,7 @@
 #       extension: .jl
 #       format_name: light
 #       format_version: '1.4'
-#       jupytext_version: 1.2.1
+#       jupytext_version: 1.2.4
 #   kernelspec:
 #     display_name: Julia 1.2.0
 #     language: julia
@@ -19,6 +19,41 @@
 
 # + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
 # <center> <img src=images/JuliaSyntax.png width="200% > </center><br>
+
+# + {"slideshow": {"slide_type": "subslide"}}
+function MySum(x::Vector{Float64})  
+    total = 0.0
+    for i in 1:length(x)
+        total += x[i]
+    end
+    total
+end
+
+# + {"slideshow": {"slide_type": "-"}}
+a = randn(100)
+MySum(a)
+
+# + {"slideshow": {"slide_type": "subslide"}}
+# Notes: No extra Package to be installed to write with symbol character.
+function ∑(X)   
+    total = zero(eltype(X))
+    for xᵢ in X
+        total += xᵢ
+    end
+    total
+end
+
+# + {"slideshow": {"slide_type": "-"}}
+a = randn(100)
+∑(a)
+
+# + {"slideshow": {"slide_type": "subslide"}, "cell_type": "markdown"}
+# ### Matlab, Python and Julia syntax comparison
+# <center><img src=images/mpjComp1.png alt="Cheat sheet" style="width:80%;"></center>
+
+# + {"slideshow": {"slide_type": "subslide"}, "cell_type": "markdown"}
+# ### Matlab, Python and Julia syntax comparison
+# <center><img src=images/mpjComp2.png alt="Cheat sheet" style="width:80%;"></center>
 
 # + {"slideshow": {"slide_type": "subslide"}, "cell_type": "markdown"}
 # <center><div class="container-syntax">
@@ -35,19 +70,6 @@
 # </div></center>
 #
 #
-
-# + {"slideshow": {"slide_type": "subslide"}}
-function ∑(A)   
-    total = zero(eltype(A))
-    for a in A
-        total += a
-    end
-    total
-end
-
-# + {"slideshow": {"slide_type": "fragment"}}
-x = rand(collect(0:100), 10)
-∑(x)
 
 # + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
 # <center><div class="container-packages">
@@ -70,6 +92,3 @@ x = rand(collect(0:100), 10)
 
 # + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
 # <center> <img src=images/benchmarks1.png width="200% > </center><br>
-
-# + {"slideshow": {"slide_type": "subslide"}}
-versioninfo()
