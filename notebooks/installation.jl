@@ -75,11 +75,10 @@
 # interact with Julia, from here : https://juliacomputing.com/products/juliapro.
 #
 # ---
-#
+
 # # Installing Julia Packages
 # A simple way of installing any package in Julia is using the command Pkg.add(). We prepared a julia script that will install the packages that will be used in the examples. Please run the following code in your Julia prompt:
 #
 # ```julia
-# julia> include(download("preloadPackages.jl"))
+# julia> include(download("https://bitbucket.org/sengroup/julia-intro-docs/raw/78b896a33cb86eb15604b9392f5100dcd2feecdc/notebooks/preloadPackages.jl"))
 # ```
-#
