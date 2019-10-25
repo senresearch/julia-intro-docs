@@ -34,4 +34,5 @@ pct = round.(prop*100)
 # names of languages
 langs = hdr[2:(end)];
 
+# barplot
 barplot(langs,pct)
