@@ -14,7 +14,7 @@ Gregory Farage ~ Chelsea Trotter ~ Hyeonju Kim ~ Tristan Hayes ~ Saunak Sen
 
 ## WiFi
 
-Network is: `CHIPS GUEST`
+Network is: `CHIPS GUEST`  
 Password is: `chipsuthsc2017`
  
 ## Installation instructions
@@ -37,13 +37,20 @@ will do our best to respond.
   Sign attendance, introduce yourself, connect to WiFi
 - 3:05pm Introductory remarks (Sen)  
   Why we are interested, what's in it for you, overview
-- 3:10pm Key features (Farage)
-- 3:30pm Why is Julia fast and flexible? (Trotter)
-- 3:45pm Installation, break, and pizza (Farage)
-- 4:00pm Mundane data analysis tasks (Sen)
-- 4:15pm Scientific computing (Sen)
-- 4:30pm Parallel, distributed, and GPU computing (Trotter)
-- 4:40pm Calling other languages (Farage)
+- 3:10pm Key features (Farage)  
+  [Slides](notebook/KeyfeaturesOverview.pdf)
+- 3:30pm Why is Julia fast and flexible? (Trotter)  
+  [Notebook](notebook)
+- 3:45pm Installation, break, and pizza (Farage)  
+  [Notebook](https://nbviewer.jupyter.org/urls/bitbucket.org/sengroup/julia-intro-docs/raw/5b1ee12b9a83f4f7e30c05c488dffae63c15bf76/notebooks/installation.ipynb)
+- 4:00pm Mundane data analysis tasks (Sen)  
+  [Notebook](notebook)
+- 4:15pm Scientific computing (Sen)  
+  [Notebook](notebook)
+- 4:30pm Parallel, distributed, and GPU computing (Trotter)  
+  [Notebook](notebook)
+- 4:40pm Calling other languages (Farage)  
+  [Notebook)(notebook)
 - 4:55pm Closing remarks, thanks, survey (Sen)
 - 5:00pm Workshop end
 
