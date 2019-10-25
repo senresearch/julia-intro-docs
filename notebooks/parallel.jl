@@ -27,8 +27,8 @@
 # - Data movement
 #
 # ### GPU
-# - CUDA and OpenCL support
-# - Hands off approach: use existing library such as CuArrays or CLArrays 
+# - CUDA support
+# - Hands off approach: use existing library such as CuArrays
 # - Hands on approach: write custom GPU kernel using CUDAnative and CUDAdrv
 
 # ----
