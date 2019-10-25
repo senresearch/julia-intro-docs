@@ -1,6 +1,7 @@
 # ---
 # jupyter:
 #   jupytext:
+#     formats: ipynb,jl:light
 #     text_representation:
 #       extension: .jl
 #       format_name: light
@@ -65,19 +66,26 @@ my_int_square(x::Int64) = x^2
 # ![](xiaoqi-images/xiaoqi-why-julia-fast/Slide7.png)
 
 # + {"slideshow": {"slide_type": "slide"}}
+#macro expansion
 @macroexpand 1+2
 # -
 
+#Abstract Syntac Tree
 @code_lowered 1+2
 
+#Julia Intermediate Representation
 @code_typed 1+2
 
 # + {"slideshow": {"slide_type": "subslide"}}
+#LLVM Intermediate Representation
 @code_llvm 1+2
 # -
 
-# If you really want to see assembly code, do this:
+#Assembly
 @code_native 1+2
 
 # + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
 # ![](xiaoqi-images/xiaoqi-why-julia-fast/Slide8.png)
+# -
+
+
