@@ -7,7 +7,11 @@
   University of Tennessee Health Science Center  
   26 S Dunlap St, Memphis, TN 38163   
   [Directions](https://duckduckgo.com/?q=26+S+Dunlap+St%2C+Memphis%2C+TN+38163&iaxm=maps)
-  
+
+## Organizing team
+
+Gregory Farage ~ Chelsea Trotter ~ Hyeonju Kim ~ Tristan Hayes ~ Saunak Sen
+
 ## Installation instructions
 
 We will use the Jupyter IDE with Julia for the seminar.  If possible,
@@ -19,7 +23,7 @@ will do our best to respond.
 
 
 
-[Julia and Jupyter lab installation instructions](https://nbviewer.jupyter.org/urls/bitbucket.org/sengroup/julia-intro-docs/notebooks/installation.ipynb)
+[Julia and Jupyter lab installation instructions](https://nbviewer.jupyter.org/urls/bitbucket.org/sengroup/julia-intro-docs/raw/5b1ee12b9a83f4f7e30c05c488dffae63c15bf76/notebooks/installation.ipynb)
 
 
 ## Schedule
@@ -45,9 +49,7 @@ At [High Cotton Brewery](https://highcottonbrewing.com) |
 
 ## Feedback survey
 
-- Food
-- Organization
-- Interest in future workshop
+Please fill out our feedback survey after the seminar.
 
 ![Julia set](notebooks/images/juliaset.png)
 

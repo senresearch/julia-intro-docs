@@ -15,6 +15,8 @@
 
 # # Acknowledgements
 #
-# - TN-CTSI, Division of Biostatistics
-# - Mykel J. Kochenderfer (Optimization book in Julia)
+# - Division of Biostatistics, Department of Preventive Medicine, UTHSC
+# - Biostatistics, Epidemiology and Research Design (BERD) unit of TN-CTSI 
+# - Kenneth Lange, UCLA
+# - Mykel J. Kochenderfer, Stanford U (Optimization book in Julia)
 # - Funding: GeneNetwork R01 (Sen/Williams, MPI); NIDA P30 (Saba/Williams, MPI)

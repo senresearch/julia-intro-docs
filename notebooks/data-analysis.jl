@@ -6,11 +6,11 @@
 #       extension: .jl
 #       format_name: light
 #       format_version: '1.4'
-#       jupytext_version: 1.2.1
+#       jupytext_version: 1.2.4
 #   kernelspec:
-#     display_name: Julia (4 threads) 1.2.0
+#     display_name: Julia 1.2.0
 #     language: julia
-#     name: julia-(4-threads)-1.2
+#     name: julia-1.2
 # ---
 
 # + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
@@ -54,6 +54,7 @@ mean.(skipmissing.(eachcol(agren)))
 # -
 
 histogram(agren.it09,lab="")
+# display.(histogram.(eachcol(agren)))
 
 # + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
 # ## Visualization: scatterplot
@@ -81,14 +82,36 @@ scatter(residuals(out0),predict(out0),lab="")
 
 # ## GLM
 
-out1 = glm(@formula(it11~log(it09)),agren,Normal(),LogLink())
+out1 = glm(@formula( it11 ~ log(it09) ),agren,Normal(),LogLink())
 
-(out1.model)
+# ## Generating random numbers
 
-scatter(residuals(LinPred(out1),predict(out1),lab="")
+using Random
+using Distributions
 
-GLM.LinPredModel(out1)
+# initialize random number generator
+rnd = MersenneTwister(100)
+# Draw uniform (0,1) numbers in 4x4 matrix
+rand(Uniform(),4,4)
 
-out1.model.
+# ## Calculating probabilities and densities
 
+# Calculating the CDF of the normal distribution
 
+cdf(Normal(0,1),1.96)
+
+# Quantiles of the normal distribution.
+
+quantile(Normal(),0.95)
+
+# Generating random normal variables with mean 0.3 and standard deviation 0.5.
+
+x = rand(Normal(0.3,0.5),1000)
+
+# We now fit the MLE assuming a normal distribution.
+
+normFit = fit_mle(Normal,x)
+
+# We generate normal variables with parameters equal to the estimated ones.
+
+rand(normFit,10)

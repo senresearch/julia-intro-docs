@@ -7,7 +7,7 @@
 #       extension: .jl
 #       format_name: light
 #       format_version: '1.4'
-#       jupytext_version: 1.2.1
+#       jupytext_version: 1.2.4
 #   kernelspec:
 #     display_name: Julia 1.2.0
 #     language: julia
@@ -88,7 +88,7 @@ function ls( y::Matrix{Float64}, X::Matrix{Float64} )
     return Ls(β,(σ²*inv(X'X))) # return estimate and variance/covariance
 end
 
-# We now examine the estimates and compare with the values of the standard implementation.  Note that this simple implementation is actually faster.
+# We now examine the estimates and compare with the values of the standard implementation.
 
 # @btime
 lsout = ls(y,X)
@@ -157,7 +157,7 @@ men = ["tom","dick","harry"]
 
 # We make a copy called `horsemen`, which is just a copy of the pointer, so is still referring to the same data as `men`.
 #
-# The variable `footment` holds a copy of the data into a new array.
+# The variable `footmen` holds a copy of the data into a new array.
 
 horsemen = men
 footmen = copy(men)
