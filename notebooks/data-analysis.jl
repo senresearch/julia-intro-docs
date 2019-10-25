@@ -84,11 +84,34 @@ scatter(residuals(out0),predict(out0),lab="")
 
 out1 = glm(@formula( it11 ~ log(it09) ),agren,Normal(),LogLink())
 
+# ## Generating random numbers
+
 using Random
 using Distributions
 
+# initialize random number generator
 rnd = MersenneTwister(100)
+# Draw uniform (0,1) numbers in 4x4 matrix
 rand(Uniform(),4,4)
-cdf(Uniform(),0.2)
 
+# ## Calculating probabilities and densities
 
+# Calculating the CDF of the normal distribution
+
+cdf(Normal(0,1),1.96)
+
+# Quantiles of the normal distribution.
+
+quantile(Normal(),0.95)
+
+# Generating random normal variables with mean 0.3 and standard deviation 0.5.
+
+x = rand(Normal(0.3,0.5),1000)
+
+# We now fit the MLE assuming a normal distribution.
+
+normFit = fit_mle(Normal,x)
+
+# We generate normal variables with parameters equal to the estimated ones.
+
+rand(normFit,10)
