@@ -28,7 +28,7 @@ will do our best to respond.
 
 ## Schedule
 
-- 2:30pm Room opens, setup, social  
+- 3:00pm Room opens, setup, social  
   Sign attendance, introduce yourself, connect to WiFi
 - 3:05pm Introductory remarks (Sen)  
   Why we are interested, what's in it for you, overview
