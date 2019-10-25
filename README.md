@@ -50,7 +50,7 @@ will do our best to respond.
 - 4:30pm Parallel, distributed, and GPU computing (Trotter)  
   [Notebook](notebook)
 - 4:40pm Calling other languages (Farage)  
-  [Notebook)(notebook)
+  [Notebook](notebook)
 - 4:55pm Closing remarks, thanks, survey (Sen)
 - 5:00pm Workshop end
 
@@ -62,6 +62,10 @@ At [High Cotton Brewery](https://highcottonbrewing.com) |
 ## Feedback survey
 
 Please fill out our feedback survey after the seminar.
+
+[julia-intro-feedback.questionpro.com](https://julia-intro-feedback.questionpro.com)
+
+## Julia set
 
 ![Julia set](notebooks/images/juliaset.png)
 
