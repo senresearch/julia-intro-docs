@@ -87,5 +87,7 @@ my_int_square(x::Int64) = x^2
 # + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
 # ![](xiaoqi-images/xiaoqi-why-julia-fast/Slide8.png)
 # -
+# ![](xiaoqi-images/xiaoqi-why-julia-fast/Slide9.png)
+
 
 
