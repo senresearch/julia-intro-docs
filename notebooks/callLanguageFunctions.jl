@@ -30,11 +30,11 @@
 # # Outline of this notebook
 #
 #
-# - python (built-in)
-# - python (hand-written)
-# - python (numpy)
-# - R (built-in)
-# - R (hand-written)
+# - Calling python built-in function 
+# - Calling python hand-written function 
+# - Importing python libraries
+# - Calling R built-in function
+# - Calling R hand-written function
 
 # + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
 # # Let choose an easy enough function to understand calling mechanisms: `sum`
@@ -198,4 +198,7 @@ rcall(:summary, agren)
 
 # + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
 # # Summary
-# ### Similar packages exists also for Java, C++ and C. Call function packages makes programming in Julia more productive and flexible. 
+
+# ### Calling other languages makes Julia more productive and flexible.
+# ### It is easy to call R and Python.
+# ### Similar packages exists also for Java, C++ and C.
