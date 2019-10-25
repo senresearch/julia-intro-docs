@@ -100,7 +100,7 @@ nprocs()
     estBootPar[i] = median(agren[idx[:,i],3])
 end
 
-histogram(estBootPar[:,2],lab="")
+histogram(estBootPar,lab="")
 
 # ### Multi-threading
 
@@ -128,8 +128,10 @@ estBootThr = zeros(nboot);
 # The code to perform multithreading is almost identical to that for distributed processing, except for the macro that we invoke before the loop.
 
 @time Threads.@threads for i=1:nboot
-    estBootThr[i,:] = median(agren[idx[:,i],3])
+    estBootThr[i] = median(agren[idx[:,i],3])
 end
+
+rmprocs()
 
 # # GPU Computing
 
