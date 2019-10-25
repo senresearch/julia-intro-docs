@@ -38,7 +38,7 @@ will do our best to respond.
 - 3:05pm Introductory remarks (Sen)  
   Why we are interested, what's in it for you, overview
 - 3:10pm Key features (Farage)  
-  [Slides](notebook/KeyfeaturesOverview.pdf)
+  [Slides](notebooks/KeyfeaturesOverview.pdf)
 - 3:30pm Why is Julia fast and flexible? (Trotter)  
   [Notebook](notebook)
 - 3:45pm Installation, break, and pizza (Farage)  
@@ -46,7 +46,7 @@ will do our best to respond.
 - 4:00pm Mundane data analysis tasks (Sen)  
   [Notebook](notebook)
 - 4:15pm Scientific computing (Sen)  
-  [Notebook](notebook)
+  [Notebook](notebooks/iptim.ipynb)
 - 4:30pm Parallel, distributed, and GPU computing (Trotter)  
   [Notebook](notebook)
 - 4:40pm Calling other languages (Farage)  
@@ -65,7 +65,3 @@ Please fill out our feedback survey after the seminar.
 
 ![Julia set](notebooks/images/juliaset.png)
 
-
-```python
-
-```
