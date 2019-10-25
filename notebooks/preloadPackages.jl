@@ -15,7 +15,7 @@ end
 using ProgressMeter
 
 # Create a list of packages to install
-pkgList = ["CSV", "Plots", "DataFrames", "GLM",
+pkgList = ["CSV", "Plots", "DataFrames", "GLM", "Random",
            "PlotlyJS", "BenchmarkTools", "Calculus",
             "PyCall", "RCall", "Conda", "Distributions", "BenchmarkTools"];
 
