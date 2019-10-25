@@ -6,7 +6,7 @@
 #       extension: .jl
 #       format_name: light
 #       format_version: '1.4'
-#       jupytext_version: 1.2.1
+#       jupytext_version: 1.2.4
 #   kernelspec:
 #     display_name: Julia 1.2.0
 #     language: julia
@@ -15,18 +15,16 @@
 
 using CSV, StatsBase, UnicodePlots
 
-dt = readlines("data/registrants.csv")
-
 hdr = ["respType","r","python","matlab","c","java","sas","fortran","other"]
-regis = CSV.read("data/registrants.csv",datarow=5,header=hdr)
+regis = CSV.read("../data/registrants.csv",datarow=5,header=hdr)
 first(regis,10)
 
-using StatsBase
-sum.(skipmissing.(eachcol(regis[:,2:(end-1)])))
+# +
+sumnotmissing(x) = length(x) - sum(ismissing.(x))
 
-pct = round.(sum.(skipmissing.(eachcol(regis[:,2:(end-1)])))./(33/100))
-langs = hdr[2:(end-1)]
-
-using UnicodePlots
+prop = sumnotmissing.(eachcol(regis[:,2:(end)]))./size(regis,1)
+pct = round.(prop*100)
+langs = hdr[2:(end)];
+# -
 
 barplot(langs,pct)
