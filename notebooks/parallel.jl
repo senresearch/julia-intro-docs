@@ -13,35 +13,8 @@
 #     name: julia-1.2
 # ---
 
-# # Basic data analysis tasks
-
-# ## Example: Fitness measured in Arabidopsis recombinant inbred lines
-#
-# Topics: Reading data, JIT compiler, missing data, summary statistics, plots, linear regression 
-
-using Statistics, CSV, Plots, DataFrames, GLM
-
-agrenURL = "https://bitbucket.org/linen/smalldata/raw/3c9bcd603b67a16d02c5dc23e7e3e637758d4d5f/arabidopsis/agren2013.csv"
-agren = CSV.read(download(agrenURL),missingstring="NA");
-
-describe(agren)
-
-mean(skipmissing(agren.it09))
-
-mean.(skipmissing.(eachcol(agren)))
-
-scatter(log2.(agren.it09),log2.(agren.it10),lab="")
-
-out0 = lm(@formula(it11~it09+flc),agren)
-
-coef(out0)
-
-vcov(out0)
-
-out1 = glm(@formula(it11~it09),agren,Normal(),LogLink())
-
 # # Parallel Computing
-#
+# ---
 # ### Coroutines
 # - Most usefull in unbalanced workloads. Dynamic scheduling with producer and consumer algorithms
 #
@@ -58,33 +31,38 @@ out1 = glm(@formula(it11~it09),agren,Normal(),LogLink())
 # - Hands off approach: use existing library such as CuArrays or CLArrays 
 # - Hands on approach: write custom GPU kernel using CUDAnative and CUDAdrv
 
+# ----
 # ## Example: Bootstrapping
 #
-# Topics: Random numbers, linear regression, indexing, distributed computing, multithreading, julia documentation
+# Topics: Random numbers, distributed computing, multithreading
 
+using Statistics, CSV, Plots, DataFrames, GLM
+
+agrenURL = "https://bitbucket.org/linen/smalldata/raw/3c9bcd603b67a16d02c5dc23e7e3e637758d4d5f/arabidopsis/agren2013.csv"
+agren = CSV.read(download(agrenURL),missingstring="NA");
+
+describe(agren)
+
+# +
 # Load random number package
 using Random
+
 # initialize random number generator
 rng = MersenneTwister(1234321);
+
 # set number of bootstrap sample
 nboot = 100_000
+
 # sample indices
 idx = rand(rng,1:400,400,nboot);
+
 # check size of index matrix
 size(idx)
 
 # +
 # allocate memory for bootstrap results
-# estBoot = zeros(nboot,3)
-# # loop over number of bootstrap samples; time
-# @time for i=1:nboot
-#     #estBoot[i,:] = coef(lm(@formula(it11~it09+flc),agren[idx[:,i],:]))
-    
-# end
-
-# idx = rand(rng,400,400,nboot);
-# allocate memory for bootstrap results
 estBoot = zeros(nboot)
+
 # loop over number of bootstrap samples; time
 @time for i=1:nboot
     estBoot[i] = median(agren[idx[:,i],3])
@@ -94,7 +72,8 @@ end
 
 # load packages
 using Distributed, SharedArrays
-# add processes, but no more than 3 (one head, two workker)
+
+# add processes, but no more than 3 (one head, two worker)
 # or you can start julia with multiple process: $ julia -p 3
 if( nprocs()< 3 ) 
     addprocs(3-nprocs())
@@ -103,10 +82,13 @@ end
 
 # load packages we are going to use on each process
 @everywhere using Statistics, DataFrames, CSV, GLM, SharedArrays
+
 # create array shared by all processes
 estBootPar = SharedArray(zeros(nboot));
+
 # send random index matrix to all processes
 @everywhere idx
+
 # send agren dataset to all processes
 @everywhere agren
 # -
@@ -138,6 +120,7 @@ histogram(estBootPar[:,2],lab="")
 # + {"jupyter": {"outputs_hidden": true}}
 # check number of threads
 Threads.nthreads()
+
 # initialize array with bootstrapped estimates
 estBootThr = zeros(nboot);
 # -
