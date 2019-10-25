@@ -7,7 +7,11 @@
   University of Tennessee Health Science Center  
   26 S Dunlap St, Memphis, TN 38163   
   [Directions](https://duckduckgo.com/?q=26+S+Dunlap+St%2C+Memphis%2C+TN+38163&iaxm=maps)
-  
+
+## Organizing team
+
+Gregory Farage ~ Chelsea Trotter ~ Hyeonju Kim ~ Tristan Hayes ~ Saunak Sen
+
 ## Installation instructions
 
 We will use the Jupyter IDE with Julia for the seminar.  If possible,
