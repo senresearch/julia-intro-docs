@@ -45,9 +45,7 @@ At [High Cotton Brewery](https://highcottonbrewing.com) |
 
 ## Feedback survey
 
-- Food
-- Organization
-- Interest in future workshop
+Please fill out our feedback survey after the seminar.
 
 ![Julia set](notebooks/images/juliaset.png)
 
