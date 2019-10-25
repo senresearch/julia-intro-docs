@@ -41,20 +41,22 @@ vcov(out0)
 out1 = glm(@formula(it11~it09),agren,Normal(),LogLink())
 
 # # Parallel Computing
-# 1. Coroutines
+#
+# ### Coroutines
 # - Most usefull in unbalanced workloads. Dynamic scheduling with producer and consumer algorithms
-# 2. Multi-threading
+#
+# ### Multi-threading
 # - @thread macro
 # - Atomic operations -> avoid race condition
-# 3. Distributed Computing
+#
+# ### Distributed Computing
 # - Code availability and loading packages  
 # - Data movement
-# 4. GPU
+#
+# ### GPU
 # - CUDA and OpenCL support
 # - Hands off approach: use existing library such as CuArrays or CLArrays 
 # - Hands on approach: write custom GPU kernel using CUDAnative and CUDAdrv
-
-# ![](xiaoqi-images/xiaoqi-why-julia-fast/Slide8.png)
 
 # ## Example: Bootstrapping
 #
@@ -122,15 +124,16 @@ histogram(estBootPar[:,2],lab="")
 
 # To use multi-threading, one has to start Julia with multiple threads.  When using Jupyter, the easiest way to do this is to
 # install a kernel with the number of threads you will use.
-#
+# ```julia
 #     using IJulia
 #     installkernel("Julia (4 threads)", env=Dict("JULIA_NUM_THREADS"=>"4"))
-#     
+# ```    
 # If you want to change the number of threads on the fly.  Use
-#
+# ```julia
 #     ENV["JULIA_NUM_THREADS"] = 4
 #     using IJulia
 #     notebook()
+# ```
 
 # + {"jupyter": {"outputs_hidden": true}}
 # check number of threads
