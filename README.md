@@ -53,3 +53,7 @@ Please fill out our feedback survey after the seminar.
 
 ![Julia set](notebooks/images/juliaset.png)
 
+
+```python
+
+```
