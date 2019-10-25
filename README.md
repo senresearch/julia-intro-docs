@@ -12,6 +12,11 @@
 
 Gregory Farage ~ Chelsea Trotter ~ Hyeonju Kim ~ Tristan Hayes ~ Saunak Sen
 
+## WiFi
+
+Network is: `CHIPS GUEST`
+Password is: `chipsuthsc2017`
+ 
 ## Installation instructions
 
 We will use the Jupyter IDE with Julia for the seminar.  If possible,
