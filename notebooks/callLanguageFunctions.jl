@@ -198,4 +198,7 @@ rcall(:summary, agren)
 
 # + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
 # # Summary
-# ### Similar packages exists also for Java, C++ and C. Call function packages makes programming in Julia more productive and flexible. 
+#
+# ### Calling other lamakes programming in Julia more productive and flexible. 
+# ### Similar packages exists also for Java, C++ and C.
+#
