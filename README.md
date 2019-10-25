@@ -63,7 +63,7 @@ At [High Cotton Brewery](https://highcottonbrewing.com) |
 
 Please fill out our feedback survey after the seminar.
 
-[julia-intro-feedback.questionpro.com](https://julia-intro-feedback.questionpro.com)
+[https://julia-tutorial-2019-feedback.questionpro.com](https://julia-tutorial-2019-feedback.questionpro.com)
 
 ## Julia set
 
