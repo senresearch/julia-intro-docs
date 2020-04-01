@@ -2,22 +2,23 @@
 # ---
 # jupyter:
 #   jupytext:
+#     cell_metadata_json: true
 #     formats: ipynb,jl:light
 #     text_representation:
 #       extension: .jl
 #       format_name: light
-#       format_version: '1.4'
-#       jupytext_version: 1.2.4
+#       format_version: '1.5'
+#       jupytext_version: 1.4.1
 #   kernelspec:
-#     display_name: Julia 1.2.0
+#     display_name: Julia 1.3.1
 #     language: julia
-#     name: julia-1.2
+#     name: julia-1.3
 # ---
 
-# + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
+# + [markdown] {"slideshow": {"slide_type": "slide"}}
 # <center> <img src=images/KeyFeaturesOverview.png width="200% > </center><br>
 
-# + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
+# + [markdown] {"slideshow": {"slide_type": "slide"}}
 # <center> <img src=images/JuliaSyntax.png width="200% > </center><br>
 
 # + {"slideshow": {"slide_type": "subslide"}}
@@ -47,15 +48,15 @@ end
 a = randn(100)
 ∑(a)
 
-# + {"slideshow": {"slide_type": "subslide"}, "cell_type": "markdown"}
+# + [markdown] {"slideshow": {"slide_type": "subslide"}}
 # ### Matlab, Python and Julia syntax comparison
 # <center><img src=images/mpjComp1.png alt="Cheat sheet" style="width:80%;"></center>
 
-# + {"slideshow": {"slide_type": "subslide"}, "cell_type": "markdown"}
+# + [markdown] {"slideshow": {"slide_type": "subslide"}}
 # ### Matlab, Python and Julia syntax comparison
 # <center><img src=images/mpjComp2.png alt="Cheat sheet" style="width:80%;"></center>
 
-# + {"slideshow": {"slide_type": "subslide"}, "cell_type": "markdown"}
+# + [markdown] {"slideshow": {"slide_type": "subslide"}}
 # <center><div class="container-syntax">
 #   <img src=images/JuliaSyntax2.png alt="Snow" style="width:100%;">
 #   
@@ -71,7 +72,7 @@ a = randn(100)
 #
 #
 
-# + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
+# + [markdown] {"slideshow": {"slide_type": "slide"}}
 # <center><div class="container-packages">
 #   <img src=images/JuliaPackages.png alt="Snow" style="width:100%;">
 #   
@@ -84,11 +85,81 @@ a = randn(100)
 #
 #
 
-# + {"slideshow": {"slide_type": "subslide"}, "cell_type": "markdown"}
+# + [markdown] {"slideshow": {"slide_type": "subslide"}}
 # <center> <img src=images/JuliaPackages2.png width="200% > </center><br>
 
-# + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
+# + [markdown] {"slideshow": {"slide_type": "slide"}}
 # <center> <img src=images/LanguageBinding.png width="200% > </center><br>
 
-# + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
+# + [markdown] {"slideshow": {"slide_type": "slide"}}
 # <center> <img src=images/benchmarks1.png width="200% > </center><br>
+# + [markdown] {"slideshow": {"slide_type": "slide"}}
+# <center> <img src=images/JuliaTypes.png width="200% > </center><br>
+
+
+# + [markdown] {"slideshow": {"slide_type": "slide"}}
+# <center> <img src=images/OOJulia.png width="200% > </center><br>
+
+# + [markdown] {"slideshow": {"slide_type": "subslide"}}
+# In more conventional object oriented languages like C++, classes could include functions (and methods) in data type definition. The  main difference with Julia is that methods do not belong to any object. The concept of the object orientation in Julia is that functions operate on data, and they are not part of the data.
+
+# + [markdown] {"slideshow": {"slide_type": "fragment"}}
+# Objects in Julia can only be inherited from Abstract types. This is similar to interfaces in Java, classes containing pure virtual methods in C++, or abstact classes in Python. 
+
+# + [markdown] {"slideshow": {"slide_type": "subslide"}}
+#
+# ### Object orientation analogy between Python and Julia
+#
+# ---
+#
+#
+#
+#
+# | Python | Julia|
+# |:-------|:-----|
+# |Class<br>class Lion:   <br>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; family = "Felidae"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  def \__init\__\(self, name\):<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  self\.name = name<br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  def sounds\(self\):<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print\(self.name, "roars."\) <br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  def description\(self\):<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; message = '\{\} is a lion from the family of \{\}.'<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(message.format(self.name, self.family))<br><br>class Cardinal:   <br>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; family = "Cardinalidae"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  def \__init\__\(self, name\):<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  self\.name = name<br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  def sounds\(self\):<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print\(self.name, "sings."\) <br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  def description\(self\):<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; message = '\{\} is a bird from the family of \{\}.'<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(message.format(self.name, self.family))<br><br>########################################### <br><br> bigCat = Lion\("Simba"\)<br> bird = Cardinal\("Red"\)<br><br>  bigCat.sounds\(\)<br> bigCat.description\(\)<br><br>  bird.sounds\(\)<br> bird.description\(\) <br> |abstract type Felidae end  <br>abstract type Cardinalidae end<br><br> struct Lion <:Felidae<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name::String<br>end <br><br>struct Cardinal <:Cardinalidae <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name::String<br>end <br><br>family\(x::Felidae\) = "Felidae"<br>family\(x::Cardinalidae\) = "Cardinalidae"<br><br> sounds\(animal::Lion\) =  println\(animal.name * " roars."\)<br>description\(animal::Lion\) = println\(animal.name * " is a lion from the family of " * family\(animal\) * "."\)<br><br> sounds\(animal::Cardinal\) = println\(animal.name * " sings."\)<br>description\(animal::Cardinal\) = println\(animal.name * " is a bird from the family of " * family\(animal\) * "."\)<br><br>########################################### <br><br>    bigCat = Lion\("Simba"\)<br> bird = Cardinal\("Red"\)<br><br>sounds\(bigCat\)<br> description\(bigCat\)<br><br>  sounds\(bird\)<br> description\(bird\) <br><br><br><br><br>
+# |
+#
+
+# + {"slideshow": {"slide_type": "subslide"}}
+# Create abstract type for feline and cardinalids
+abstract type Felidae end
+abstract type Cardinalidae end
+
+# + {"slideshow": {"slide_type": "fragment"}}
+# Composite type for lions
+struct Lion <:Felidae
+    name::String
+end
+# Composite type for cardinals
+struct Cardinal <:Cardinalidae
+    name::String
+end
+
+# + {"slideshow": {"slide_type": "fragment"}}
+# Methods returning species family name
+# Feline
+family(x::Felidae) = "Felidae"
+# Cardinalids
+family(x::Cardinalidae) = "Cardinalidae"
+
+# + {"slideshow": {"slide_type": "fragment"}}
+# Methods associated with the Lion and Cardinal types
+# Lion methods
+sounds(animal::Lion) =  println(animal.name * " roars.")
+description(animal::Lion) = println(animal.name * " is a lion from the family of " * family(animal) * ".")
+# Cardinal methods
+sounds(animal::Cardinal) = println(animal.name * " roars.")
+description(animal::Cardinal) = println(animal.name * " is a bird from the family of " * family(animal) * ".")
+
+# + {"slideshow": {"slide_type": "subslide"}}
+bigCat = Lion("Simba")
+bird = Cardinal("Red");
+
+# + {"slideshow": {"slide_type": "fragment"}}
+sounds(bigCat) 
+description(bigCat) 
+
+# + {"slideshow": {"slide_type": "fragment"}}
+sounds(bird) 
+description(bird) 
