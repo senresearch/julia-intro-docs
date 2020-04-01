@@ -1,0 +1,106 @@
+---
+title: High Performance Julia
+author: Chelsea Trotter
+date: March 16th, 2020
+---
+
+In this tutorial, I will cover the secret sauce for Julia's performance, and how to write high performing code in Julia.
+I must acknowledge the book High Performance Julia, since a lot of the material from this tutorial is distilled from that book.
+Another good resource is the Performance Tips from Julia documentation.
+However, I still strongly recommand the book, because it has more detailed exampls, and is more self contained.
+It is also a good reference book, it covers almost all the things you need to know to speed up your program.
+Of course, Julia is rapidly evolving, even after the version 1.0 launch.
+The content in this tutorial migh be out dated in the future in terms of performance gain,
+because Julia's compiler writters are working hard to make software writters' job easier,
+so you don't have to spend so much time tweeking for performance.
+But the fundamental design doesn't change.
+Being aware of the language design and also how the internal works can only help you write better code.
+
+Most of us using dynamic language, such as R, Python etc, enjoys the interactivity of a dynamic language.
+This has allow us to quickly prototype algorithm and not dwell in details such as input type, mamory management, etc.
+However, when performance becomes your main concern, we turn to C/C++ to rewrite the hot loop.
+(You know, that 20% of your code taking up 80% of running time. In reality, it would quite possibly be the 1% taking 99% of running time)
+This approach requires software writters to be proficient in both language, which limits the number of people who can contribute.
+Julia is created to solve this problem.
+
+I love how the creators of Julia [describs their ideal programming language](https://julialang.org/blog/2012/02/why-we-created-julia/):
+"We want a language that's open source, with a liberal license.
+We want the speed of C with the dynamism of Ruby.
+We want a language that's homoiconic, with true macros like Lisp, but with obvious, familiar mathematical notation like Matlab.
+We want something as usable for general programming as Python, as easy for statistics as R, as natural for string processing as Perl, as powerful for linear algebra as Matlab, as good at gluing programs together as the shell.
+Something that is dirt simple to learn, yet keeps the most serious hackers happy. We want it interactive and we want it compiled.
+(Did we mention it should be as fast as C?)"
+
+# Outline for this talk:
+- Why is Julia fast
+- How to measure performance
+- Type Stability
+- Arrays
+- Beyond one core: Tasks, Threads, GPU, Distributed Computing.
+- Julia Performance Cheetsheet
+
+# Why is Julia fast?
+1. JIT
+2. LLVM to generate machine code
+  - Anything ducktaped a LLVM will make your code magically run faster? No.
+  Garbage in, garbage out. From language design, to the way you write code, every step matters.
+3. Type system for expressive code
+  - No run time type checks
+
+# How to measure performance:
+- @time
+- @timev
+- @elapsed: return time as a result rather than on to the console, which is useful for performance limit during unit testing.
+- @profile (profile the second run, don't profile the compiler)
+  - Sample profiler
+  - Profile.print()
+  - Profile.clear()
+- ProfileView.view() : Flame graph
+
+# How to write high performance code.
+1. Type stability.
+- What is type stability?
+  - The return type of a function is only dependent on its input type, not the value.
+  This is the key of type inference, which is one of the secret ingredient of Julia's speed.
+  - Loop Variable.
+- Identifying type instability? @code_warntype. The first line of the output is your key. It is marked in red.
+  - If it is type Any, or type Union{}, usually it's type unstable.
+2. Concrete type is preferred over abstract type whenever possible, because concrete type arrays can be allocated before, while abstract type can only store pointer, which distroys memory locality, and pipelining.
+
+
+3. Function
+- inline function: @inline, @noinline, julia -inline=no
+- macro: But sometimes, the best way to make any code faster is to do less work.This involves either changing the algorithm or moving the computation to compile time, which leaves less work to do at runtime.
+Macros are usually used as a means to reduce repetitive code, whereby large volumes of code with a common pattern can be generated from a smaller set of primitives. However, they can also be used to improve performance in some situations. This can be achieved by moving common or constant computation to the compile time wherever possible.
+- minimize using keyword argument in performance intensive inner loops, prefer to use positional argument.
+
+5. Array
+- This method of storing arrays inline without pointer indirection as much as possible has many advantages and, as we discussed earlier, is responsible for many of Julia's performance claims. In other dynamic languages, the type of every element of the array is uncertain and the compiler has to insert type checks on each access.
+- Further, even when every element of the array is of the same type, we pay the cost of memory load for every array element if they are stored as pointers. Given the relative costs of a CPU operation versus a memory load on a modern processor, not doing this is a huge benefit.
+- When the compiler and CPU notice operations on a contiguous block of memory, CPU pipelining and caching are much more efficient. Some CPU optimizations, such as Single Instruction Multiple Data (SIMD), are also unavailable when using indirect array loads.
+- Column major; Use LinearAlgebra.adjoint for row major algorthm for a substitute.
+- bounds checking
+- preallocate function output
+- sizehint!
+- mutating functions : no allocation, save time.
+- SIMD
+  Therefore, before adding a @simd annotation to your code, you need to ensure that the loop has the following properties:
+  - Each iteration of the loop is independent of the others. That is, no iteration of the loop uses a value from a previous iteration or waits for its completion. The significant exception to this rule is that certain reductions are permitted.
+  - The arrays being operated upon within the loop do not overlap in memory.
+  - The loop body is straight-line code without branches or function calls.
+  - The number of iterations of the loop is obvious. In practical terms, this means that the loop should typically be expressed on the length of the arrays within it.
+  - The subscript (or index variable) within the loop changes by one for each iteration. In other words, the subscript is unit stride.
+  - Bounds checking is disabled for SIMD loops. (Bound checking can cause branches due to exceptional conditions.)
+- Use StaticArray
+- Use StructArray
+- Yeppp!
+- In situations like this where we want to write generic functions that can be performant with different kinds of arrays, the advice is to not use linear indexing. So, what should we use?
+The simplest option is to directly iterate the array rather than iterating its indices. The iterator for each kind of array will choose the most optimal strategy for high performance.
+This strategy is usable when the algorithm only requires the elements of the array and not its indexes. If the indexes need to be available within the loop, they can be written using the eachindex() method. Each array defines an optimized eachindex() method that allows the iteration of its index efficient.
+
+# Notes
+1. Designed for speed from the beginning
+1. Large part of the code is written in Julia itself
+1. Broadcasting, which is a fundamental low-level operation in the compiler,
+can be completely overridden by custom array type.
+1.

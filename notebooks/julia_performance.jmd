@@ -1,0 +1,48 @@
+---
+title: High Performance Julia
+author: Chelsea Trotter
+date: March 16th, 2020
+---
+
+# Why is Julia fast?
+1. JIT
+2. LLVM to generate machine code
+  - Anything ducktaped a LLVM will make your code magically run faster? No.
+  Garbage in, garbage out. From language design, and the way you code, matters too.
+3. Type system for expressive code
+  - No run time type checks
+
+# How to measure performance:
+- @time
+- @timev
+- @elapsed: return time as a result rather than on to the console, which is useful for performance limit during unit testing.
+- @profile (profile the second run, don't profile the compiler)
+  - Sample profiler
+  - Profile.print()
+  - Profile.clear()
+- ProfileView.view() : Flame graph
+
+# How to write high performance code.
+1. Type stability.
+- What is type stability?
+  - The return type of a function is only dependent on its input type, not the value.
+  This is the key of type inference, which is one of the secret ingredient of Julia's speed.
+  - Loop Variable.
+- Identifying type instability? @code_warntype. The first line of the output is your key. It is marked in red.
+  - If it is type Any, or type Union{}, usually it's type unstable.
+2. Concrete type is preferred over abstract type whenever possible, because concrete type arrays can be allocated before, while abstract type can only store pointer, which distroys memory locality, and pipelining.
+
+
+3. Function
+- inline function: @inline, @noinline, julia -inline=no
+- macro: But sometimes, the best way to make any code faster is to do less work.This involves either changing the algorithm or moving the computation to compile time, which leaves less work to do at runtime.
+Macros are usually used as a means to reduce repetitive code, whereby large volumes of code with a common pattern can be generated from a smaller set of primitives. However, they can also be used to improve performance in some situations. This can be achieved by moving common or constant computation to the compile time wherever possible.
+- minimize using keyword argument in performance intensive inner loops, prefer to use positional argument.
+
+
+# Notes
+1. Designed for speed from the beginning
+1. Large part of the code is written in Julia itself
+1. Broadcasting, which is a fundamental low-level operation in the compiler,
+can be completely overridden by custom array type.
+1.
