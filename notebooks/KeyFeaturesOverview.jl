@@ -8,18 +8,18 @@
 #       extension: .jl
 #       format_name: light
 #       format_version: '1.5'
-#       jupytext_version: 1.4.1
+#       jupytext_version: 1.11.0
 #   kernelspec:
-#     display_name: Julia 1.3.1
+#     display_name: Julia 1.6.3
 #     language: julia
-#     name: julia-1.3
+#     name: julia-1.6
 # ---
 
-# + [markdown] {"slideshow": {"slide_type": "slide"}}
-# <center> <img src=images/KeyFeaturesOverview.png width="200% > </center><br>
+# + [markdown] {"slideshow": {"slide_type": "slide"}, "tags": []}
+# <center> <img src=images/KeyFeaturesOverview.png width="200%" > </center><br>
 
-# + [markdown] {"slideshow": {"slide_type": "slide"}}
-# <center> <img src=images/JuliaSyntax.png width="200% > </center><br>
+# + [markdown] {"slideshow": {"slide_type": "slide"}, "tags": []}
+# <center> <img src=images/JuliaSyntax.png width="200%" > </center><br>
 
 # + {"slideshow": {"slide_type": "subslide"}}
 function MySum(x::Vector{Float64})  
@@ -86,25 +86,25 @@ a = randn(100)
 #
 
 # + [markdown] {"slideshow": {"slide_type": "subslide"}}
-# <center> <img src=images/JuliaPackages2.png width="200% > </center><br>
+# <center> <img src=images/JuliaPackages2.png width="200%" > </center><br>
 
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
-# <center> <img src=images/LanguageBinding.png width="200% > </center><br>
+# <center> <img src=images/LanguageBinding.png width="200%" > </center><br>
 
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
-# <center> <img src=images/benchmarks1.png width="200% > </center><br>
+# <center> <img src=images/benchmarks1.png width="200%" > </center><br>
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
-# <center> <img src=images/JuliaTypes.png width="200% > </center><br>
+# <center> <img src=images/JuliaTypes.png width="200%" > </center><br>
 
 
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
-# <center> <img src=images/OOJulia.png width="200% > </center><br>
+# <center> <img src=images/OOJulia.png height= "1000px" > </center><br>
 
 # + [markdown] {"slideshow": {"slide_type": "subslide"}}
 # In more conventional object oriented languages like C++, classes could include functions (and methods) in data type definition. The  main difference with Julia is that methods do not belong to any object. The concept of the object orientation in Julia is that functions operate on data, and they are not part of the data.
 
 # + [markdown] {"slideshow": {"slide_type": "fragment"}}
-# Objects in Julia can only be inherited from Abstract types. This is similar to interfaces in Java, classes containing pure virtual methods in C++, or abstact classes in Python. 
+# Objects in Julia can only be inherited from Abstract types. This is similar to interfaces in Java, classes containing pure virtual methods in C++, or abstract classes in Python. 
 
 # + [markdown] {"slideshow": {"slide_type": "subslide"}}
 #

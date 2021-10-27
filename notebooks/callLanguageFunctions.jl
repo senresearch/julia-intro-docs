@@ -2,19 +2,20 @@
 # ---
 # jupyter:
 #   jupytext:
+#     cell_metadata_json: true
 #     formats: ipynb,jl:light
 #     text_representation:
 #       extension: .jl
 #       format_name: light
-#       format_version: '1.4'
-#       jupytext_version: 1.2.4
+#       format_version: '1.5'
+#       jupytext_version: 1.11.0
 #   kernelspec:
-#     display_name: Julia 1.2.0
+#     display_name: Julia 1.6.3
 #     language: julia
-#     name: julia-1.2
+#     name: julia-1.6
 # ---
 
-# + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
+# + [markdown] {"slideshow": {"slide_type": "slide"}}
 # # Language Binding
 #
 # The purpose of this notebook is for you to see as simple it is to call function or libraries from other programming languages. We show you few examples how to directly call and fully interoperate with Python and R from the Julia language, with the packages `PyCall` and `RCall`.
@@ -26,7 +27,7 @@
 # * Excelling at Julia Basics and Beyond (Huda Nassar, Jane Herriman): 
 #     https://github.com/xorJane/Excelling-at-Julia-Basics-and-Beyond
 
-# + {"slideshow": {"slide_type": "subslide"}, "cell_type": "markdown"}
+# + [markdown] {"slideshow": {"slide_type": "subslide"}}
 # # Outline of this notebook
 #
 #
@@ -36,10 +37,10 @@
 # - Calling R built-in function
 # - Calling R hand-written function
 
-# + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
+# + [markdown] {"slideshow": {"slide_type": "slide"}}
 # # Let choose an easy enough function to understand calling mechanisms: `sum`
 
-# + {"slideshow": {"slide_type": "-"}, "cell_type": "markdown"}
+# + [markdown] {"slideshow": {"slide_type": "-"}}
 # Consider the  **sum** function `sum(x)`, which computes
 # $$
 # \mathrm{sum}(x) = \sum_{i=1}^n x_i,
@@ -50,16 +51,16 @@
 # Generate avector of random numbers, uniform on [0,1)
 a = rand(10^3);
 
-# + {"slideshow": {"slide_type": "-"}, "cell_type": "markdown"}
+# + [markdown] {"slideshow": {"slide_type": "-"}}
 #     The expected result is 0.5 * 10^4, since the mean of each entry is 0.5
 
 # + {"slideshow": {"slide_type": "-"}}
  sum(a)
 
-# + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
+# + [markdown] {"slideshow": {"slide_type": "slide"}}
 # # 1. Calling Python's built-in `sum` 
 
-# + {"slideshow": {"slide_type": "-"}, "cell_type": "markdown"}
+# + [markdown] {"slideshow": {"slide_type": "-"}}
 # The `PyCall` package provides a Julia interface to Python:
 
 # + {"slideshow": {"slide_type": "-"}}
@@ -77,12 +78,12 @@ pysum(a)
 # Confirm that the results of Julia and Python built in sum function are approximatly the same    
 pysum(a) ≈ sum(a)
 
-# + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
+# + [markdown] {"slideshow": {"slide_type": "slide"}}
 # # 2. Calling Python hand-written `sum` function 
 #
 # We can also write an easy Python code from within Julia.
 
-# + {"slideshow": {"slide_type": "-"}, "cell_type": "markdown"}
+# + [markdown] {"slideshow": {"slide_type": "-"}}
 # ### We can take an existing python function and wrap it into a julia function
 # _filename: python_sum.py_
 #
@@ -103,7 +104,7 @@ python_sum = pyimport("python_sum") # wrote a function outside julia
 # + {"slideshow": {"slide_type": "-"}}
 python_sum.py_sum(a)
 
-# + {"slideshow": {"slide_type": "subslide"}, "cell_type": "markdown"}
+# + [markdown] {"slideshow": {"slide_type": "subslide"}}
 # ### We can directly write the python function and wrap it into a julia function
 # -
 
@@ -119,7 +120,7 @@ sum_py = py"py_sum"
 # + {"slideshow": {"slide_type": "-"}}
 sum_py(a)
 
-# + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
+# + [markdown] {"slideshow": {"slide_type": "slide"}}
 # # 3. Importing Python libraries 
 #
 # Here is a simple example to call Python `math` library and its sinus function `math.sin`:
@@ -128,7 +129,7 @@ sum_py(a)
 math = pyimport("math")
 math.sin(math.pi / 4) 
 
-# + {"slideshow": {"slide_type": "subslide"}, "cell_type": "markdown"}
+# + [markdown] {"slideshow": {"slide_type": "subslide"}}
 # ## `numpy` takes advantage of  hardware "SIMD"
 #
 # `numpy` is an optimized C library, callable from Python.
@@ -147,7 +148,7 @@ numpy_sum = pyimport("numpy")."sum"
 # + {"slideshow": {"slide_type": "-"}}
 numpy_sum(a)
 
-# + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
+# + [markdown] {"slideshow": {"slide_type": "slide"}}
 # # 4. Calling R built-in `sum` 
 #
 # Since it is true that Julia still lacks the depth and scale of the R package environment, let see how to interoperate R and Julia with `RCall`.
@@ -156,7 +157,7 @@ numpy_sum(a)
 # using Pkg; Pkg.add("RCall")
 using RCall
 
-# + {"slideshow": {"slide_type": "subslide"}, "cell_type": "markdown"}
+# + [markdown] {"slideshow": {"slide_type": "subslide"}}
 # We are able use directly base R function and pass arguments easily, as in the next example: 
 
 # + {"slideshow": {"slide_type": "-"}}
@@ -170,7 +171,7 @@ rcall(:sum, a)
 # + {"slideshow": {"slide_type": "-"}}
 sum_R = convert(Float64, rcall(:sum, a))
 
-# + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
+# + [markdown] {"slideshow": {"slide_type": "slide"}}
 # # 5. Calling R hand-written function
 #
 # ### We can directly write the R function and wrap it into a julia function.
@@ -178,27 +179,27 @@ sum_R = convert(Float64, rcall(:sum, a))
 # + {"slideshow": {"slide_type": "-"}}
 R"""
 library(vioplot); agrenViolinPlot <- function(){
-agrenURL <- "https://bitbucket.org/linen/smalldata/raw/3c9bcd603b67a16d02c5dc23e7e3e637758d4d5f/arabidopsis/agren2013.csv"
+agrenURL <- "https://raw.githubusercontent.com/sens/smalldata/master/arabidopsis/agren2013.csv"
 agren <- read.csv(agrenURL); agrenFit <- agren[,c(1,2,3,4,5,6)]
 vioplot(agrenFit, names=names(agrenFit), main = "ViolinPlot of Fitness Values per site and year", xlab ="Site", ylab =  "Fitness Values",col = rainbow(6))}
 """
 R"agrenViolinPlot"();
 
-# + {"slideshow": {"slide_type": "subslide"}, "cell_type": "markdown"}
+# + [markdown] {"slideshow": {"slide_type": "subslide"}}
 # ### We can even use summary function from directly on our Julia dataframes
 
 # + {"slideshow": {"slide_type": "-"}}
 using CSV, DataFrames
-agrenURL = "https://bitbucket.org/linen/smalldata/raw/3c9bcd603b67a16d02c5dc23e7e3e637758d4d5f/arabidopsis/agren2013.csv"
-agren = CSV.read(download(agrenURL),missingstring="NA");
- agren = dropmissing(agren, disallowmissing=true);
+agrenURL = "https://raw.githubusercontent.com/sens/smalldata/master/arabidopsis/agren2013.csv"
+agren = CSV.read(download(agrenURL),DataFrame, missingstring="NA");
+agren = dropmissing(agren, disallowmissing=true);
 
 # + {"slideshow": {"slide_type": "-"}}
 rcall(:summary, agren)
 
-# + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
+# + [markdown] {"slideshow": {"slide_type": "slide"}}
 # # Summary
-
+#
 # ### Calling other languages makes Julia more productive and flexible.
 # ### It is easy to call R and Python.
 # ### Similar packages exists also for Java, C++ and C.
