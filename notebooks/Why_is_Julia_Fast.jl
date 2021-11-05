@@ -1,41 +1,42 @@
 # ---
 # jupyter:
 #   jupytext:
+#     cell_metadata_json: true
 #     formats: ipynb,jl:light
 #     text_representation:
 #       extension: .jl
 #       format_name: light
-#       format_version: '1.4'
-#       jupytext_version: 1.2.4
+#       format_version: '1.5'
+#       jupytext_version: 1.11.0
 #   kernelspec:
-#     display_name: Julia 1.2.0
+#     display_name: Julia 1.6.3
 #     language: julia
-#     name: julia-1.2
+#     name: julia-1.6
 # ---
 
-# + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
+# + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ![](xiaoqi-images/xiaoqi-why-julia-fast/Slide1.png)
 
-# + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
+# + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ![](xiaoqi-images/xiaoqi-why-julia-fast/Slide2.png)
 
-# + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
+# + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ![](xiaoqi-images/xiaoqi-why-julia-fast/Slide3.png)
 
-# + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
+# + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ![](xiaoqi-images/xiaoqi-why-julia-fast/Slide4.png)
 
-# + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
+# + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ![](xiaoqi-images/xiaoqi-why-julia-fast/Slide5.png)
 
 
-# + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
+# + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ![](xiaoqi-images/xiaoqi-why-julia-fast/Slide6.png)
 
 # + {"slideshow": {"slide_type": "slide"}}
 methods(+)
 
-# + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
+# + [markdown] {"slideshow": {"slide_type": "slide"}}
 # # Type Inference 
 #
 # - the process of deducing the types of later values from the types of input values.
@@ -52,7 +53,7 @@ my_square(x) = x^2
 my_int_square(x::Int64) = x^2
 @code_typed my_int_square(1)
 
-# + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
+# + [markdown] {"slideshow": {"slide_type": "slide"}}
 # # Cached Compilation  
 #
 # Compilation is cached and reused for future runs. 
@@ -62,7 +63,7 @@ my_int_square(x::Int64) = x^2
 
 @time 2^30
 
-# + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
+# + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ![](xiaoqi-images/xiaoqi-why-julia-fast/Slide7.png)
 
 # + {"slideshow": {"slide_type": "slide"}}
@@ -84,10 +85,11 @@ my_int_square(x::Int64) = x^2
 #Assembly
 @code_native 1+2
 
-# + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
+# + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ![](xiaoqi-images/xiaoqi-why-julia-fast/Slide8.png)
 # -
 # ![](xiaoqi-images/xiaoqi-why-julia-fast/Slide9.png)
+
 
 
 

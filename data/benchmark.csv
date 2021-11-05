@@ -1,0 +1,58 @@
+#Julia,julia version 1.6.0
+#Python 3,Python 3.9.2
+#C gcc,gcc (Ubuntu 10.3.0-1ubuntu1) 10.3.0
+#Lisp SBCL,SBCL 2.1.1
+#Java,openjdk 17 2021-09-14
+# OpenJDK Runtime Environment (build 17+35-2724)
+# OpenJDK 64-Bit Server VM (build 17+35-2724, mixed mode, sharing)
+program,language,secs,mem,gz,busy,cpu load
+n-body,Julia,4.05,218740,1111,4.36,3% 2% 3% 100%
+n-body,Python 3,567.56,8076,1196,570.95,0% 0% 0% 100%
+n-body,C gcc,2.18,768,1633,2.19,0% 100% 0% 0%
+n-body,Lisp SBCL,7.83,17892,1403,7.88,0% 0% 100% 0%
+n-body,Java,6.77,35432,1489,6.82,100% 1% 0% 0%
+mandelbrot,Julia,1.32,227836,624,4.66,98% 86% 85% 85%
+mandelbrot,Python 3,163.32,12080,688,642.00,98% 98% 98% 98%
+mandelbrot,C gcc,1.27,31792,1135,5.08,100% 100% 99% 100%
+mandelbrot,Lisp SBCL,4.09,46684,2447,16.19,99% 99% 99% 99%
+mandelbrot,Java,4.12,70952,796,16.22,98% 98% 98% 99%
+spectral-norm,Julia,1.11,182068,429,3.74,80% 79% 80% 98%
+spectral-norm,Python 3,120.99,13424,407,479.86,99% 99% 99% 99%
+spectral-norm,C gcc,0.40,872,1197,1.58,100% 100% 100% 98%
+spectral-norm,Lisp SBCL,1.44,15680,762,5.72,99% 99% 99% 99%
+spectral-norm,Java,1.58,39408,756,5.97,94% 94% 96% 94%
+fannkuch-redux,Julia,7.64,206244,1067,28.95,95% 95% 94% 95%
+fannkuch-redux,Python 3,352.29,12232,950,"1,392.10",97% 99% 100% 99%
+fannkuch-redux,C gcc,7.58,872,910,29.61,100% 98% 99% 93%
+fannkuch-redux,Lisp SBCL,9.63,32388,1527,37.69,98% 95% 99% 99%
+fannkuch-redux,Java,10.38,35388,1282,40.84,99% 99% 98% 97%
+fasta,Julia,1.12,193924,1082,1.40,10% 8% 99% 8%
+fasta,Python 3,37.32,846264,1947,71.03,10% 67% 83% 30%
+fasta,C gcc,0.78,1156,1463,0.78,0% 0% 0% 100%
+fasta,Lisp SBCL,4.71,18072,1757,4.75,0% 0% 0% 100%
+fasta,Java,1.19,44740,2543,3.50,75% 63% 87% 70%
+k-nucleotide,Julia,5.12,374876,951,11.36,63% 72% 38% 49%
+k-nucleotide,Python 3,46.28,241108,1967,176.42,94% 97% 95% 96%
+k-nucleotide,C gcc,3.72,130260,1506,12.07,100% 89% 78% 57%
+k-nucleotide,Lisp SBCL,10.29,512240,2479,37.48,88% 99% 88% 90%
+k-nucleotide,Java,4.85,354288,1812,15.92,80% 85% 87% 76%
+binary-trees,Julia,7.43,482620,634,23.65,69% 100% 78% 72%
+binary-trees,Python 3,48.03,462732,472,174.44,89% 97% 88% 89%
+binary-trees,C gcc,1.54,168832,809,4.35,60% 67% 57% 100%
+binary-trees,Lisp SBCL,2.84,529972,932,7.09,73% 46% 63% 67%
+binary-trees,Java,2.48,1725776,835,7.86,74% 75% 97% 72%
+reverse-complement,Julia,1.60,677796,522,1.91,6% 6% 100% 9%
+reverse-complement,Python 3,7.20,1005184,814,10.75,20% 53% 48% 29%
+reverse-complement,C gcc,0.86,712208,820,1.27,99% 28% 1% 19%
+reverse-complement,Lisp SBCL,6.40,1490256,904,6.42,0% 0% 0% 100%
+reverse-complement,Java,1.53,687864,2183,3.50,80% 46% 57% 46%
+pidigits,Julia,0.97,172908,506,1.24,10% 98% 10% 9%
+pidigits,Python 3,1.28,12024,567,1.29,0% 1% 100% 0%
+pidigits,C gcc,0.59,2444,1090,2.37,100% 100% 100% 98%
+pidigits,Lisp SBCL,3.34,607800,493,3.38,0% 0% 100% 1%
+pidigits,Java,0.93,36088,764,0.97,4% 0% 1% 99%
+regex-redux,Julia,1.68,394324,759,3.06,99% 7% 5% 71%
+regex-redux,Python 3,1.36,111852,1403,2.64,32% 40% 33% 88%
+regex-redux,C gcc,0.80,152172,1397,2.01,52% 99% 48% 53%
+regex-redux,Lisp SBCL,15.34,925000,1972,31.90,42% 49% 63% 53%
+regex-redux,Java,5.31,793572,929,17.50,79% 78% 83% 89%

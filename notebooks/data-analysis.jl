@@ -1,19 +1,20 @@
 # ---
 # jupyter:
 #   jupytext:
+#     cell_metadata_json: true
 #     formats: ipynb,jl:light
 #     text_representation:
 #       extension: .jl
 #       format_name: light
-#       format_version: '1.4'
-#       jupytext_version: 1.2.4
+#       format_version: '1.5'
+#       jupytext_version: 1.11.0
 #   kernelspec:
-#     display_name: Julia 1.2.0
+#     display_name: Julia 1.6.3
 #     language: julia
-#     name: julia-1.2
+#     name: julia-1.6
 # ---
 
-# + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
+# + [markdown] {"slideshow": {"slide_type": "slide"}}
 # # Basic data analysis tasks
 #
 # - Data: Fitness in Arabidopsis recombinant inbred lines
@@ -21,7 +22,7 @@
 # - Data description: Summary statistics, plots
 # - Modeling: Linear regression
 
-# + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
+# + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ## Example: Fitness measured in Arabidopsis recombinant inbred lines
 #
 # Topics: Reading data, JIT compiler, missing data, summary statistics, plots, linear regression 
@@ -35,13 +36,13 @@ agrenURL = "https://bitbucket.org/linen/smalldata/raw/3c9bcd603b67a16d02c5dc23e7
 agren = CSV.read(download(agrenURL),missingstring="NA")
 first(agren,10)
 
-# + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
+# + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ## Data description
 # -
 
 describe(agren)
 
-# + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
+# + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ## Calculating summary statistics
 # -
 
@@ -49,20 +50,20 @@ mean(skipmissing(agren.it09))
 
 mean.(skipmissing.(eachcol(agren)))
 
-# + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
+# + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ## Visualization: histogram
 # -
 
 histogram(agren.it09,lab="")
 # display.(histogram.(eachcol(agren)))
 
-# + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
+# + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ## Visualization: scatterplot
 # -
 
 scatter(log2.(agren.it09),log2.(agren.it10),lab="")
 
-# + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
+# + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ## Modeling: linear regression
 # -
 
@@ -74,7 +75,7 @@ coef(out0)
 
 vcov(out0)
 
-# + {"slideshow": {"slide_type": "slide"}, "cell_type": "markdown"}
+# + [markdown] {"slideshow": {"slide_type": "slide"}}
 # ## Residual plots
 # -
 
