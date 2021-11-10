@@ -19,115 +19,150 @@
 # ---
 # -
 
-# The purpose of this notebook is to showcase one of the most popular deep learning framework in Julia: `Flux.jl`.
+# The purpose of this notebook is to showcase one of the most popular deep learning framework in Julia: `Flux.jl`. The goal of our demonstration is to buil a simple classification neural network.
 #    
 #    
 # *References for this notebook:*
-# *  Flux Neural Network tutorial: [Deep Learning with Julia](https://medium.com/coffee-in-a-klein-bottle/deep-learning-with-julia-e7f15ad5080b)
+# *  Flux Neural Network tutorial: [Deep Learning with Julia](https://medium.com/coffee-in-a-klein-bottle/deep-learning-with-julia-e7f15ad5080b) (DSB, 2021)
 
 # + [markdown] slideshow={"slide_type": "subslide"}
-# ## Outline of this notebook
+# ### Outline of this notebook
 #
 #
-# - Generate data 
-# - Create the Neural Network 
-# - Train the model
+# - Generate a data set 
+# - Create neural network model
+# - Train model
 # - Visualize Results
 # -
 
-# ## Libraries
+# ### Libraries
 
-# Packages
-using Plots
+# Let first import the libraries that we will need for our example. 
+
+# +
+# Graphics
+using Plots 
+
+# Statistics
 using Statistics
+
+# Machine Learning
 using Flux
+# -
 
-# External source
-include("notebookFormatting.jl");
+# ## Generate a data set 
 
-# ## Generate data 
+# In this short presentation, let simulate a data set as a toy example. It has the benefit of being self-contained, with no need to import data. Let generate two circumscribed clusters labeled as *class A* and *class B*. 
 
-#Auxiliary functions for generating our data
-function generate_real_data(n)
-    x1 = rand(1,n) .- 0.5
-    x2 = (x1 .* x1)*3 .+ randn(1,n)*0.1
-    return vcat(x1,x2)
+# ### Function to generate outer cluster: class A
+
+function generateClassAdata(n)    
+    θ  = 2π .* rand(1, n)
+    r  = rand(1, n)/5 .+ 0.3
+    x = @. r*cos(θ)
+    y = @. r*sin(θ) + 0.5
+        
+    return vcat(x, y)
 end
-function generate_fake_data(n)
-    θ  = 2*π*rand(1,n)
-    r  = rand(1,n)/3
-    x1 = @. r*cos(θ)
-    x2 = @. r*sin(θ)+0.5
-    return vcat(x1,x2)
+
+# ### Function to generate inner cluster: class B
+
+function generateClassBdata(n)
+    θ  = 2π .* rand(1, n)
+    r  = rand(1, n)/3
+    x = @. r*cos(θ)
+    y = @. r*sin(θ) + 0.5
+    
+    return vcat(x, y)
 end
-# Creating our data
-train_size = 5000
-real = generate_real_data(train_size)
-fake = generate_fake_data(train_size)
-# Visualizing
-scatter(real[1,1:500],real[2,1:500], label = "Real")
-scatter!(fake[1,1:500],fake[2,1:500], 
-         legend = :outertopright, label = "Fake")
 
+# ### Data set
 
-# ## Creating the Neural Network
+# Each cluster contains the same amount of data points defined by the variable `sizeTraining`.
+
+# +
+# Create our data
+sizeTraining = 5000
+classA = generateClassAdata(sizeTraining)
+classB = generateClassBdata(sizeTraining)
+
+# Visualize our data
+num2visualize = 500
+
+scatter(classA[1, 1:num2visualize],classA[2, 1:num2visualize], label = "Class A")
+scatter!(classB[1, 1:num2visualize],classB[2, 1:num2visualize],
+        xaxis = false, yaxis = false, grid = false,
+        legend = :outertopright, label = "Class B", 
+        size=(500,400))
+# -
+
+# ## Create neural network model
+
+# Modeling neural network with `Flux.jl` is straightforward and tidy. We first use the function `Chain()` that assembles the layers to be called in sequence order. Here, we create dense layers with the function `Dense()`. We indicate how many input and output and the activation function.
+# For instance, our first layer is dense with two inputs, 25 outputs, and ReLU for activation function. Our second is a dense layer with input 25, output 1, and a sigmoid activation function. All the different layer types available in `Flux.jl` are described [here](https://fluxml.ai/Flux.jl/stable/models/layers/).
 
 function NeuralNetwork()
     return Chain(
             # layer 1: 2 inputs, 25 outputs, 
-            #          activation function: relu(Rectified Linear Unit function f(x) = max(0, x))
+            #          activation function: rectified linear Unit function (relu) defined as f(x) = max(0, x))
             Dense(2, 25,relu),
             # layer 2: 25 inputs, 1 output, 
-            #          activation function: sigmoid function (f(x)= (1+e⁻ˣ)⁻¹)
+            #          activation function: sigmoid function, defined as σ(x)= (1+e⁻ˣ)⁻¹
             Dense(25,1,x->σ.(x))
             )
 end
 
 # ## Train model
 
-# Organizing the data in batches
-X    = hcat(real,fake)
-Y    = vcat(ones(train_size),zeros(train_size));
+# Once we create the architecture of our neural network, it remains to define what [loss function](https://fluxml.ai/Flux.jl/stable/models/losses/) and [optimization algorithm](https://fluxml.ai/Flux.jl/stable/training/optimisers/) we are going to use for training.
 
-# Create batches by generating an object that iterates over mini-batches of data, 
-# each mini-batch containing batchsize observations 
-# (except possibly the last one).
-data = Flux.Data.DataLoader((X, Y'), batchsize=100,shuffle=true);
-
-# Define our model
+# +
+# Generate a new model
 m = NeuralNetwork()
-# Define optimization algorithm
-# Gradient descent with a learning η = 0.05
-lr = 0.05
-opt  = Descent(lr) 
+
+# Define optimization algorithm: 
+# Gradient descent with a learning rate η
+η = 0.3
+opt  = Descent(η)
+
 # Define loss function
 loss(x, y) = sum(Flux.Losses.binarycrossentropy(m(x), y)) # m(x), predicted values;
+# -
 
-# ### Training Method 1
+# Our model is ready for training. But before starting, we compose our data set with the [`DataLoader` type](https://fluxml.ai/Flux.jl/stable/data/dataloader/) that handles the training iteration by constructing an object that iterates over mini-batches of data. Each mini-batch contains `batchsize` observations over the data.
 
-# Declare what parameters are going to be trained:
+# Compose data in batches
+X  = hcat(classA, classB)
+Y  = vcat(ones(sizeTraining), zeros(sizeTraining));
+data = Flux.Data.DataLoader((X, Y'), batchsize=100,shuffle=true);
 
-# we can select what specific layers need to be trained, useful for transfer learning.
+# We present two methods to train the neural network model. The first method is direct and simple using the [`Flux.train!()` function](https://fluxml.ai/Flux.jl/stable/training/training/). The second option is to train in a more hand-operated way where it is possible to [customize the training loops](https://fluxml.ai/Flux.jl/stable/training/training/#Custom-Training-loops).
+
+# ### Training scheme: option 1
+
+# Declare what parameters are going to be trained.   
+# It is possible to specify what layers need to be trained, which is helpful for transfer learning. Follow this [link](https://fluxml.ai/Flux.jl/stable/models/advanced/#Freezing-Layer-Parameters) to learn how to to not include all the model parameters.   
+
 ps = Flux.params(m);
 
-# Define how many epochs will be used:    
+# Define how many epochs will be used. (*Reminder: number of epochs is  hyperparameter that defines the number of times that a learning algorithm will handle the entire training data set.*)    
 
-# hyperparameter that defines the number of times that a learning algorithm will handle the entire training data set.
 numEpochs = 20;
 
-# Training:
+# Time to Train the model!
 
 for i in 1:numEpochs
     Flux.train!(loss, ps, data, opt)
 end
 
-outputModel = [mean(m(real)) mean(m(fake))]
-println(round.(outputModel; digits = 4)) # Print model prediction
+outputModel = round.([mean(m(classA)) mean(m(classB))]; digits = 4)
+println("Mean prediction probability using the class A training set: $(outputModel[1])")
+println("Mean prediction probability using the class B training set: $(outputModel[2])")    
 
-# ### Training Method 2
+# ### Training scheme: option 2
 
-# +
-m2    = NeuralNetwork()
+# Generate a new model
+m2 = NeuralNetwork()
 epochs = 20
 loss2(x, y) = sum(Flux.Losses.binarycrossentropy(m2(x), y)) # m(x), predicted values
 for epoch = 1:epochs
@@ -143,19 +178,57 @@ for epoch = 1:epochs
     end
 end
 
-outputModel = [mean(m2(real)) mean(m2(fake))]
-println(round.(outputModel; digits = 4)) # Print model prediction
+outputModel = round.([mean(m2(classA)) mean(m2(classB))]; digits = 4)
+println("Mean prediction probability using the class A training set: $(outputModel[1])")
+println("Mean prediction probability using the class B training set: $(outputModel[2])")
 
+# ## Results visualizations
+
+# ### Training visualization
+
+numSample = 500
+scatter(classA[1,1:numSample],classA[2,1:numSample],zcolor=m(classA)', m = (:bluesreds, 0.8))
+scatter!(classB[1,1:numSample],classB[2,1:numSample],zcolor=m(classB)',m = (:bluesreds, 0.8), 
+    clim=(0, 1), legend=false,
+    colorbar_title = string("Propbability to belong to class A"),
+    xaxis = false, yaxis = false, grid = false,
+    size = (480,400))
+
+# ### Testing visualizations
+
+# #### Results on a testing data set
+
+# Generate the testing datsa set.
+
+testSize = 1000
+classAtest = generateClassAdata(testSize)
+classBtest = generateClassBdata(testSize);
+
+# Apply the model on the testing data points.
+
+# +
+resultsLabelClassA = m(classAtest) 
+resultsLabelClassB = m(classBtest)
+
+outputModel = round.([mean(resultsLabelClassA) mean(resultsLabelClassB)]; digits = 4)
+println("Mean prediction probability using the class A training set: $(outputModel[1])")
+println("Mean prediction probability using the class B training set: $(outputModel[2])")
 # -
 
-fieldnames(typeof(data))
+# #### Visualization
 
-# ## Results Visualization
+numSample = testSize
+scatter(classAtest[1,1:numSample],classAtest[2,1:numSample],zcolor=resultsLabelClassA', m = (:bluesreds, 0.8))
+scatter!(classBtest[1,1:numSample],classBtest[2,1:numSample],zcolor=resultsLabelClassB',m = (:bluesreds, 0.8), 
+    clim=(0, 1), legend=false,
+    colorbar_title = string("Propbability to belong to class A"),
+    xaxis = false, yaxis = false, grid = false,
+    size = (480,400))
 
-scatter(real[1,1:100],real[2,1:100],zcolor=m(real)')
-scatter!(fake[1,1:100],fake[2,1:100],zcolor=m(fake)',legend=false)
+# #### Confusion matrix
 
-scatter(real[1,1:100],real[2,1:100],zcolor=m2(real)')
-scatter!(fake[1,1:100],fake[2,1:100],zcolor=m2(fake)',legend=false)
+DataFrame( :_ => ["Actual Class A", "Actual Class B"],
+    Symbol("Predicted Class A") => [sum(collect(resultsLabelClassA').>= 0.5), sum(collect(resultsLabelClassB').>= 0.5)],
+        Symbol("Predicted Class B") => [sum(collect(resultsLabelClassA').< 0.5), sum(collect(resultsLabelClassB').< 0.5)])       
 
-
+versioninfo()
