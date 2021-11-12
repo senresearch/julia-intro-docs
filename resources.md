@@ -1,6 +1,16 @@
 # Resources
 ---
 
+## Tutorial
+- [Online manual](http://docs.julialang.org/en/latest/)
+- [Introducing Julia](https://en.wikibooks.org/wiki/Introducing_Julia)
+- [Julia Academy](https://juliaacademy.com/courses)
+- [Julia code practice and learning site](https://exercism.io/tracks/julia)
+- [Julia Tutorial notebook with some exercise](https://github.com/JuliaAcademy/JuliaTutorials/tree/main/introductory-tutorials/intro-to-julia)
+- [RIP Julia tutorial](https://riptutorial.com/julia-lang)
+
+
+
 ## Juliacon 2019, Baltimore, USA
 
 ### Workshop
@@ -25,7 +35,7 @@ Ekre)](https://docs.google.com/presentation/d/1k0fIakKdOnqvt8gHboqgI35Qf9hZOCkN0
 Presentation of a Julia debugger and demonstration of a variety of
 interfaces for accessing it.
 - [LightQuery.jl](https://github.com/bramtayl/LightQuery.jl "Package on Github") presented by [Alex Lew](https://www.youtube.com/watch?v=brbzbxV_OiY "Youtube Presentation")   
-*dplyr-like in Julia*
+    *dplyr-like in Julia*
 - [DataKnots.jl](https://github.com/rbt-lang/DataKnots.jl "Package on Github") presented by [Clark C. Evans](https://www.youtube.com/watch?v=m3c8Z6HBn48 "Youtube Presentation")   
 "*Extensible, practical and coherent algebra of query combinators*"
 - [Literate.jl](https://github.com/fredrikekre/Literate.jl "Package on Github") developped by [Frederik Ekre](https://www.youtube.com/watch?v=Tfp1WEdYfqk "Youtube Presentation")   
@@ -43,7 +53,8 @@ Optimization.*"
 - [MendelIHT.jl: Generalized Linear Models for High Dimensional Genetics (GWAS) Data](https://github.com/biona001/MendelIHT.jl "Package on Github") presented by [Benjamin Chu](https://www.youtube.com/watch?v=UPIKafShwFw&list=PLP8iPy9hna6StY9tIJIUN3F_co9A0zh0H&index=110 "Youtube Presentation")   
 "*Sparse GLM regression for High Dimensional Data.*"
 
-### Extra
+
+## Extra
 
 
 - [Annual Julia User & Developer Survey 2019](https://julialang.org/blog/2019/08/2019-julia-survey) presented by Viral Shah.
@@ -54,6 +65,7 @@ Optimization.*"
 - [JuDoc.jl](https://github.com/tlienart/JuDoc.jl "Package on Github") developped by Thibaut Lienart   
 "*Static site generator. Simple, fast, compatible with basic LaTeX,
 maths with KaTeX, optional pre-rendering, written in Julia.*"
+
 
 
 ## Useful links

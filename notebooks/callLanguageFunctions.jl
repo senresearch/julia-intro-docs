@@ -17,6 +17,7 @@
 
 # + [markdown] {"slideshow": {"slide_type": "slide"}}
 # # Language Binding
+# ---
 #
 # The purpose of this notebook is for you to see as simple it is to call function or libraries from other programming languages. We show you few examples how to directly call and fully interoperate with Python and R from the Julia language, with the packages `PyCall` and `RCall`.
 #
@@ -139,7 +140,7 @@ math.sin(math.pi / 4)
 # using Pkg; Pkg.add("Conda")
 using Conda
 # In case numpy is not already installed run:
-Conda.add("numpy")
+# Conda.add("numpy")
 
 # + {"slideshow": {"slide_type": "subslide"}}
 # We can use now the sum function from the `numpy` library
