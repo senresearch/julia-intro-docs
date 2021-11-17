@@ -1,14 +1,14 @@
 # ---
 # jupyter:
 #   jupytext:
-#     formats: ipynb,jl
+#     formats: ipynb,jl:light
 #     text_representation:
 #       extension: .jl
 #       format_name: light
 #       format_version: '1.5'
-#       jupytext_version: 1.11.1
+#       jupytext_version: 1.11.0
 #   kernelspec:
-#     display_name: julia 1.6.3
+#     display_name: Julia 1.6.3
 #     language: julia
 #     name: julia-1.6
 # ---

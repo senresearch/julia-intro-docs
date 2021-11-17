@@ -6,12 +6,12 @@
 #     text_representation:
 #       extension: .jl
 #       format_name: light
-#       format_version: '1.4'
-#       jupytext_version: 1.2.4
+#       format_version: '1.5'
+#       jupytext_version: 1.11.0
 #   kernelspec:
-#     display_name: Julia 1.2.0
+#     display_name: Julia 1.6.3
 #     language: julia
-#     name: julia-1.2
+#     name: julia-1.6
 # ---
 
 # # Optimization and linear algebra
