@@ -57,14 +57,19 @@ Optimization.*"
 ## Extra
 
 
+- [Annual Julia User & Developer Survey 2021](https://julialang.org/blog/2021/08/julia-user-developer-survey/) presented by Andrew Claster.
 - [Annual Julia User & Developer Survey 2019](https://julialang.org/blog/2019/08/2019-julia-survey) presented by Viral Shah.
 - [Announcing composable multi-threaded parallelism in
   Julia](https://julialang.org/blog/2019/07/multithreading)
-- [Remark.jl](https://github.com/piever/Remark.jl "Package on Github") developped by Pietro Vertechi   
+- [Remark.jl](https://github.com/piever/Remark.jl "Package on Github") created by Pietro Vertechi   
 "*Create markdown presentations from Julia*"
-- [JuDoc.jl](https://github.com/tlienart/JuDoc.jl "Package on Github") developped by Thibaut Lienart   
+- [JuDoc.jl](https://github.com/tlienart/JuDoc.jl "Package on Github") created by Thibaut Lienart   
 "*Static site generator. Simple, fast, compatible with basic LaTeX,
 maths with KaTeX, optional pre-rendering, written in Julia.*"
+- [Pluto.jl](https://github.com/fonsp/Pluto.jl "Package on Github") created by Fons Varder Plas   
+"*Reactive Notebook, written in Julia.*"
+- [Plots.jl](https://github.com/JuliaPlots/Plots.jl "Package on Github") created by Tom Breloff   
+"*Plotting metapackage: it's an interface over many different plotting libraries.*"
 
 
 
